@@ -1,0 +1,112 @@
+<html>
+<title>A BMS</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../stylesheets/bootstrap.css">
+<link rel="stylesheet" href="../stylesheets/mine.css">
+<link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+<link rel="stylesheet" href="../stylesheets/bootstrap-toggle.min.css">
+
+
+<script src="../javascripts/jquery-slim.js"></script>
+<script src="../javascripts/popper.js"></script>
+<script src="../javascripts/bootstrap.js"></script>
+<script src="../javascripts/bootstrap-toggle.min.js"></script>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="../images/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    BMS
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="voip.html"><span><b>Contacts</b></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Settings</a>
+      </li>
+    </ul>  
+  </div>
+</nav>
+<!-- Content -->
+<div class="container">
+    <div class="row rowmine">
+    </div>
+</div>
+</body>
+<script>
+    var asb ;
+
+    $('body').on('click','.voice',function() {
+        var x = $(this).siblings('p').html();
+        videoCall(x);
+    });
+    initpage();
+
+
+    function initpage(userList){
+        // mocked data
+        var list = [];
+        var user1 = {
+            name : "ali",
+            age : "30",
+            userId : "120",
+            imgUrl : "../images/user.svg"
+        };
+
+        var user2 = {
+            name : "hasan",
+            age : "24",
+            userId : "240",
+            imgUrl : "../images/user.svg"
+        }
+        var user3 = {
+            name : "sabet",
+            age : "360",
+            userId : "360",
+            imgUrl : "../images/user.svg"
+        };
+        list.push(user1);
+        list.push(user2);
+        list.push(user3);
+
+        $.each(list,function(index,data){
+            $('.rowmine').append(`<div class="col-sm-6 col-md-4 col-lg-3 text-center ">
+                                    <div class="contactCard">
+                                        <span>${data.name}</span>
+                                     <img src="${data.imgUrl}" class="nodeicon" alt="" >
+                                    <div class="btngroup">
+                                    <p class="userId" style="display: none;">${data.userId}</p><a href="#" class="btn btn-lg btn-primary callbutton voice"><img src="../images/facetime-button.svg" class="callbuttonimage" alt="" ></a><a href="#" class="btn btn-lg btn-primary callbutton video"><img src="../images/telephone-handle.svg" class="callbuttonimage" alt="" > </a> </div>
+                                    </div>
+                                </div>`);
+        });
+
+    }
+
+    function videoCall(x){
+        $.ajax({
+            url: "/voip/video",
+            method: "POST",
+            data: {userId: x },
+            success:function(resp){
+                    $('body').append(`
+                    <div class="videoBox">
+                        <button class="hang">Hang Up</button>
+                        <iframe src="${resp.gateway.url}"></iframe>
+                    </div>
+                `);
+            },
+
+        });
+    }
+</script>
+</html>

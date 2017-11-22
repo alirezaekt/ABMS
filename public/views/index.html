@@ -1,0 +1,139 @@
+<!--suppress ALL -->
+<html>
+<title>A BMS</title>
+<meta charset="UTF-8">
+<meta name="author" content="AlirezaEkt">
+<link rel="stylesheet" href="../stylesheets/bootstrap.css">
+<link rel="stylesheet" href="../stylesheets/mine.css">
+<link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+<link rel="stylesheet" href="../stylesheets/bootstrap-toggle.min.css">
+
+
+<script src="../javascripts/jquery-slim.js"></script>
+<script src="../javascripts/popper.js"></script>
+<script src="../javascripts/bootstrap.js"></script>
+<script src="../javascripts/bootstrap-toggle.min.js"></script>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+   <a class="navbar-brand" href="#">
+    <img src="../images/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    BMS
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html"><span style="color:007bff"><b>Home</b></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="voip.html">Contacts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Settings</a>
+      </li>
+    </ul>  
+  </div>
+</nav>
+
+<!-- Content -->
+<div class="container">
+    <div class="row rowmine">   
+        <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
+            <div class="smartnode">
+            Room1 <span>light1<br></span>
+            <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
+            <br><input type="checkbox" checked data-toggle="toggle" id="lgt1">  
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
+            <div class="smartnode">
+            Room1 <span style="">temperature<br></span>
+            <img src="../images/thermometer.svg" class="  nodeicon" alt="Responsive image" >
+            <span class="nodeinfo">23</span>  
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-8 col-lg-6 text-center ">
+            <div class="smartnode">
+           Room1 <span>Fan<br></span>
+            <img src="../images/fan-propellers.svg" class="  nodeicon" alt="Responsive image" >
+            <br><input type="checkbox" checked data-toggle="toggle">  
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
+            <div class="smartnode">
+            Room2 <span>light1<br></span>
+            <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
+            <br><input type="checkbox" unchecked data-toggle="toggle" id="light2">  
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
+            <div class="smartnode">
+            Room1 <span>light1<br></span>
+            <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
+            <br><input type="checkbox" checked data-toggle="toggle">  
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
+            <div class="smartnode">
+            Room1 <span >light1<br></span>
+            <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
+            <br><input type="checkbox" checked data-toggle="toggle">  
+            </div>
+        </div>    
+        <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
+            <div class="smartnode">
+            Room1 <span>light1<br></span>
+            <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
+            <br>
+            <div class="progress"><div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div></div>
+            </div>
+        </div> 
+        
+    </div>
+</div>
+
+
+<script>
+var asb ;
+$(document).ready(function() {
+    asb = "asan";
+    $.ajax({
+        url: "/voip/call",
+        method: "POST",
+        data: {usrname: "hasan"}
+    });
+});
+
+
+</script>
+
+    <!--&lt;!&ndash;&ndash;&gt;-->
+<!--//var socket = io(); //load socket.io-client and connect to the host that serv$-->
+<!--//window.addEventListener("load", function(){ //when page loads-->
+<!--//  var lightbox = document.getElementById( "lgt1");-->
+<!--//  lightbox.addEventListener("change", function() { //add event listener for $-->
+<!--//    socket.emit( "lgt1",Number(this.checked)); //send button status to serve$-->
+<!--//  });-->
+<!--//});-->
+<!--//socket.on('light', function (data) { //get button status from client-->
+<!--//  document.getElementById( "lgt1").checked = data; //change checkbox accordi$-->
+<!--//  socket.emit( "lgt1", data); //send push button status to back to server-->
+<!--//});-->
+<!--//-->
+<!--//window.addEventListener("load", function(){ //when page loads-->
+<!--//  var lightbox2 = document.getElementById("light2");-->
+<!--//  lightbox2.addEventListener("change", function() { //add event listener for$-->
+<!--//    socket.emit("light2",Number(this.checked)); //send button status to serv$-->
+<!--//  });-->
+<!--//});-->
+<!--//socket.on('light2', function (data) { //get button status from client-->
+<!--//  document.getElementById("light2").checked = data; //change checkbox accord$-->
+<!--//  socket.emit("light2", data); //send push button status to back to server-->
+<!--//});-->
+</body>
+</html>

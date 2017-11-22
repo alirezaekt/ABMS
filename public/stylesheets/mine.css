@@ -1,0 +1,143 @@
+.sabii {
+  display:inline-block;
+  position: relative;
+  height: auto;
+  min-height: 70px;
+  border-radius:5px;
+  border:0px solid #022E40;
+  margin:auto;
+  padding:0;
+  margin-bottom: 30px;
+  padding-left:2px;
+  padding-right:2px;
+  padding-bottom:30px;
+  background-color: #cccccc;
+}
+
+
+.smartnode ,.contactCard{
+
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 4px;
+  background-color: #dddddd;
+  height: 210px;
+
+}
+
+.smartnode span{
+  color:007bff;
+}
+.smartnode:hover {
+  background-color: #cccccc;
+}
+
+.nodeicon {
+  width: auto;
+  max-width:100px;
+  width:100%;
+  height: auto;
+  position: absolute;
+  transition: translate;
+  -ms-transform: translate(50px, 100px);
+  -webkit-transform: translate(50px, 100px);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  
+
+}
+.callbutton {
+  margin: 10px 5px;
+  width: 40%;
+  height: 50px;
+}
+.callbuttonimage {
+  height: 30px;
+}
+
+.btngroup {
+      position: absolute;
+    bottom: 0;
+    width: 80%;
+    left: 10%;
+
+}
+.toggle.btn{
+  position: absolute;
+  margin-top:10px ;
+  bottom: 0;
+  -ms-transform: translate(50px, 100px);
+  -webkit-transform: translate(50px, 100px);
+  transform: translate(-50%, -30%);
+  left: 50%;
+}
+
+
+.nodeinfo {
+  position: absolute;
+  bottom: 0;
+  -ms-transform: translate(50px, 100px);
+  -webkit-transform: translate(50px, 100px);
+  transform: translate(-50%, -30%);
+  font-size: 22;
+  font-weight: bold;
+  color: 007bff;
+
+}
+
+.toggle-on.btn {
+  padding-right: 12px !important ;
+}
+.toggle-off.btn {
+  padding-left: 12px !important ;
+}
+.rowmine {
+  margin-top: 10px;
+}
+
+.progress {
+      width: 95%;
+    left: 2.5%;
+    /* top: 50%; */
+    background-color: #e9ecef;
+    border-radius: .25rem;
+    position: relative;
+    /* float: right; */
+    clear: both;
+    top: 58%;
+    height: 25px !important ;
+}
+.videoBox {
+  position: fixed;
+  width: 90vw;
+  left: 5vw;
+  height: 80vh;
+  top: 5vh;
+  border:1px solid red;
+  background-color:#CCCCCC;
+  z-index: 200;
+  display: block;
+}
+.VideoBox iframe {
+  position: relative;
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  border:1px solid white;
+  display: block;
+}
+.VideoBox .hang {
+  background-color: red;
+  border-radius:10px;
+  color:white;
+  font-weight:bold;
+  position: absolute;
+  left: 40%;
+  bottom:50px;
+  width:200px;
+  z-index:201;
+  height:50px;
+  display: block;
+}

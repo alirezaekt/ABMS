@@ -1,0 +1,15 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res) {
+    res.render('index.html');
+});
+router.get('/admin', function(req, res) {
+    res.send('');
+});
+router.get('/admin', function(req, res) {
+
+});
+module.exports = router;
+

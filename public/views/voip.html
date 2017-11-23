@@ -26,10 +26,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="voip.html"><span><b>Contacts</b></span></a>
+        <a class="nav-link" href="voip"><span><b>Contacts</b></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Settings</a>
@@ -40,16 +40,22 @@
 <!-- Content -->
 <div class="container">
     <div class="row rowmine">
+
     </div>
 </div>
 </body>
 <script>
-    var asb ;
 
-    $('body').on('click','.voice',function() {
+    $('body').on('click','.video',function() {
         var x = $(this).siblings('p').html();
         videoCall(x);
+        console.log(x);
     });
+
+    $('body').on('click','.hang',function() {
+        $(this).parent('div').remove();
+    });
+
     initpage();
 
 
@@ -70,8 +76,8 @@
             imgUrl : "../images/user.svg"
         }
         var user3 = {
-            name : "sabet",
-            age : "360",
+            name : "mohammad",
+            age : "36",
             userId : "360",
             imgUrl : "../images/user.svg"
         };
@@ -85,7 +91,7 @@
                                         <span>${data.name}</span>
                                      <img src="${data.imgUrl}" class="nodeicon" alt="" >
                                     <div class="btngroup">
-                                    <p class="userId" style="display: none;">${data.userId}</p><a href="#" class="btn btn-lg btn-primary callbutton voice"><img src="../images/facetime-button.svg" class="callbuttonimage" alt="" ></a><a href="#" class="btn btn-lg btn-primary callbutton video"><img src="../images/telephone-handle.svg" class="callbuttonimage" alt="" > </a> </div>
+                                    <p class="userId" style="display: none;">${data.userId}</p><a href="#" class="btn btn-lg btn-primary callbutton video"><img src="../images/facetime-button.svg" class="callbuttonimage" alt="" ></a><a href="#" class="btn btn-lg btn-primary callbutton voice"><img src="../images/telephone-handle.svg" class="callbuttonimage" alt="" > </a> </div>
                                     </div>
                                 </div>`);
         });

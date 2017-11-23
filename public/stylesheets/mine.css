@@ -114,7 +114,6 @@
   left: 5vw;
   height: 80vh;
   top: 5vh;
-  border:1px solid red;
   background-color:#CCCCCC;
   z-index: 200;
   display: block;
@@ -130,13 +129,13 @@
 }
 .VideoBox .hang {
   background-color: red;
-  border-radius:10px;
+  border-radius:2px;
   color:white;
   font-weight:bold;
   position: absolute;
-  left: 40%;
+  left: 35%;
   bottom:50px;
-  width:200px;
+  width:30%;
   z-index:201;
   height:50px;
   display: block;

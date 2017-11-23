@@ -14,7 +14,6 @@
   background-color: #cccccc;
 }
 
-
 .smartnode ,.contactCard{
 
   padding: 10px;
@@ -26,9 +25,9 @@
 }
 
 .smartnode span{
-  color:007bff;
+  color: #007bff;
 }
-.smartnode:hover {
+.smartnode:hover,.contactCard:hover {
   background-color: #cccccc;
 }
 
@@ -44,7 +43,6 @@
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  
 
 }
 .callbutton {
@@ -82,7 +80,7 @@
   transform: translate(-50%, -30%);
   font-size: 22;
   font-weight: bold;
-  color: 007bff;
+  color: #007bff;
 
 }
 
@@ -127,6 +125,7 @@
   border:1px solid white;
   display: block;
 }
+
 .VideoBox .hang {
   background-color: red;
   border-radius:2px;

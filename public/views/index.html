@@ -8,14 +8,12 @@
 <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
 <link rel="stylesheet" href="../stylesheets/bootstrap-toggle.min.css">
 
-
 <script src="../javascripts/jquery-slim.js"></script>
 <script src="../javascripts/popper.js"></script>
 <script src="../javascripts/bootstrap.js"></script>
 <script src="../javascripts/bootstrap-toggle.min.js"></script>
 
 <body>
-
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
    <a class="navbar-brand" href="#">
@@ -73,15 +71,15 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
             <div class="smartnode">
-            Room1 <span>light1<br></span>
+            Room2 <span>light2<br></span>
             <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
             <br><input type="checkbox" checked data-toggle="toggle">  
             </div>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
             <div class="smartnode">
-            Room1 <span >light1<br></span>
-            <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
+            Room1 <span >valve<br></span>
+            <img src="../images/industrial-pipe.svg" class="  nodeicon" alt="Responsive image" >
             <br><input type="checkbox" checked data-toggle="toggle">  
             </div>
         </div>    
@@ -97,35 +95,30 @@
     </div>
 </div>
 
-
-<script>
-
-
-
-</script>
-
-    <!--&lt;!&ndash;&ndash;&gt;-->
-<!--//var socket = io(); //load socket.io-client and connect to the host that serv$-->
-<!--//window.addEventListener("load", function(){ //when page loads-->
-<!--//  var lightbox = document.getElementById( "lgt1");-->
-<!--//  lightbox.addEventListener("change", function() { //add event listener for $-->
-<!--//    socket.emit( "lgt1",Number(this.checked)); //send button status to serve$-->
-<!--//  });-->
-<!--//});-->
-<!--//socket.on('light', function (data) { //get button status from client-->
-<!--//  document.getElementById( "lgt1").checked = data; //change checkbox accordi$-->
-<!--//  socket.emit( "lgt1", data); //send push button status to back to server-->
-<!--//});-->
-<!--//-->
-<!--//window.addEventListener("load", function(){ //when page loads-->
-<!--//  var lightbox2 = document.getElementById("light2");-->
-<!--//  lightbox2.addEventListener("change", function() { //add event listener for$-->
-<!--//    socket.emit("light2",Number(this.checked)); //send button status to serv$-->
-<!--//  });-->
-<!--//});-->
-<!--//socket.on('light2', function (data) { //get button status from client-->
-<!--//  document.getElementById("light2").checked = data; //change checkbox accord$-->
-<!--//  socket.emit("light2", data); //send push button status to back to server-->
-<!--//});-->
 </body>
+<script src="../javascripts/socket.io.js"></script>
+<script>
+    var socket = io(); //load socket.io-client and connect to the host that serves the page
+    window.addEventListener("load", function(){ //when page loads
+        var lightbox = document.getElementById("light");
+        lightbox.addEventListener("change", function() { //add event listener for when checkbox cha$
+            socket.emit("light",Number(this.checked)); //send button status to server (as 1 or 0)
+        });
+    });
+    socket.on('light', function (data) { //get button status from client
+        document.getElementById("light").checked = data; //change checkbox according to push button$
+        socket.emit("light", data); //send push button status to back to server
+    });
+
+    window.addEventListener("load", function(){ //when page loads
+        var lightbox2 = document.getElementById("light2");
+        lightbox2.addEventListener("change", function() { //add event listener for when checkbox cha$
+            socket.emit("light2",Number(this.checked)); //send button status to server (as 1 or 0)
+        });
+    });
+    socket.on('light2', function (data) { //get button status from client
+        document.getElementById("light2").checked = data; //change checkbox according to push button$
+        socket.emit("light2", data); //send push button status to back to server
+    });
+</script>
 </html>

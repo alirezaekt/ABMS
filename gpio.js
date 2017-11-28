@@ -10,7 +10,7 @@ var pushButton2 = new Gpio(20, 'in', 'both');
 http.listen(7070); //listen to port 7070
 
 function handler (req, res) { //create server
-    fs.readFile(__dirname + '/public/index.html', function(err, data) { //read file index.html $
+    fs.readFile(__dirname + '/views/index.html', function(err, data) { //read file index.html $
         if (err) {
             res.writeHead(404, {'Content-Type': 'text/html'}); //display 404 on error
             return res.end("404 Not Found");

@@ -49,42 +49,39 @@
     $('body').on('click','.video',function() {
         var x = $(this).siblings('p').html();
         videoCall(x);
-        console.log(x);
     });
 
     $('body').on('click','.hang',function() {
-        $(this).parent('div').remove();
+        $(this).parent('.contactCard').remove();
     });
 
     initpage();
 
-
-    function initpage(userList){
+    function initpage(){
         // mocked data
         var list = [];
         var user1 = {
             name : "ali",
-            age : "30",
-            userId : "120",
+            age : "192",
+            userId : "192.168.1.1",
             imgUrl : "../images/user.svg"
         };
 
         var user2 = {
             name : "hasan",
             age : "24",
-            userId : "240",
+            userId : "192.168.1.2",
             imgUrl : "../images/user.svg"
         }
         var user3 = {
             name : "mohammad",
             age : "36",
-            userId : "360",
+            userId : "50000",
             imgUrl : "../images/user.svg"
         };
         list.push(user1);
         list.push(user2);
         list.push(user3);
-
         $.each(list,function(index,data){
             $('.rowmine').append(`<div class="col-sm-6 col-md-4 col-lg-3 text-center ">
                                     <div class="contactCard">
@@ -99,19 +96,39 @@
     }
 
     function videoCall(x){
-        $.ajax({
-            url: "/voip/video",
+
+
+
+
+
+        $.ajax(
+            {
+            url: "http://"+x+":8088/janus",
             method: "POST",
-            data: {userId: x },
+            data: {
+                janus : "create",
+                transaction: "10000",
+            },
             success:function(resp){
-                    $('body').append(`
+              if(resp["janus"] === "success") {
+                  console.log(resp["transaction"]);
+                  $('body').append(`
                     <div class="videoBox">
                         <button class="hang">Hang Up</button>
-                        <iframe src="${resp.gateway.url}"></iframe>
+                        <iframe src="http://${x}:8088/janus/${resp["data"]["id"]}"></iframe>
                     </div>
                 `);
+              }
             },
-
+            error:function(err){
+                window.alert("call again");
+            },
+            fail:function(err){
+                window.alert("call again");
+            },
+            timeout:function(res){
+                window.alert("call again");
+            }
         });
     }
 </script>

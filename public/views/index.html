@@ -118,7 +118,7 @@
     });
     socket.on('light2', function (data) { //get button status from client
         document.getElementById("light2").checked = data; //change checkbox according to push button$
-        socket.emit("light2", data); //send push button status to back to server
+        socket.emit("light2", data); /A/send push button status to back to server
     });
 </script>
 </html>

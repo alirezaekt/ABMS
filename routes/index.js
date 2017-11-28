@@ -6,9 +6,9 @@ router.get('/', function(req, res) {
     res.render('index.html');
 });
 router.get('/admin', function(req, res) {
-    res.send('');
+    res.send(true);
 });
-router.get('/admin', function(req, res) {
+router.post('/admin', function(req, res) {
 
 });
 module.exports = router;

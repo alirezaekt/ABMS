@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var voip = require('./routes/voip');
+var videocalltest = require('./routes/videocalltest');
 
 var app = express();
 
@@ -25,6 +26,8 @@ app.use("/",express.static(__dirname+'/public'));
 app.use('/', index);
 app.use('/users', users);
 app.use('/voip', voip);
+app.use('/videocalltest', videocalltest);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found-__-');

@@ -78,7 +78,7 @@
   -ms-transform: translate(50px, 100px);
   -webkit-transform: translate(50px, 100px);
   transform: translate(-50%, -30%);
-  font-size: 22;
+  font-size: 22px;
   font-weight: bold;
   color: #007bff;
 
@@ -138,4 +138,20 @@
   z-index:201;
   height:50px;
   display: block;
+}
+
+
+.smartnode button{
+  color: white;
+  border-radius: 5px;
+  background-color: #007bff;
+  border: none;
+  top: 100px;
+  width: 70px;
+  height: 40px;
+  position: relative;
+
+}
+.smartnode button:active {
+  background-color: #cccccc;
 }

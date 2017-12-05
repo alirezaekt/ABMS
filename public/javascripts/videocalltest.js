@@ -47,7 +47,7 @@ if(window.location.protocol === 'http:')
 	server = "http://192.168.137.215:8088/janus";
 else
 	server = "https://192.168.137.215:8088/janus";
-server = "/janus";
+//server = "/janus";
 
 var janus = null;
 var videocall = null;

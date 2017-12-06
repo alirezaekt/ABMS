@@ -244,7 +244,7 @@ Janus.init = function(options) {
                 if(chromever >= 43) {
                     element.srcObject = streamvariable;
                 } else if(typeof element.src !== 'undefined') {
-                    element.src = Ustreamvariable;
+                    element.src = streamvariable;
                 } else {
                     Janus.error("Error attaching stream to element");
                 }

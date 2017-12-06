@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="441ae590-a621-4636-8c8a-a4bac26a3037" name="Default" comment="videocalltest fixed">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/videocalltest.js" afterPath="$PROJECT_DIR$/public/javascripts/videocalltest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/videocalltest.html" afterPath="$PROJECT_DIR$/public/views/videocalltest.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="janus.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="janus.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/janus.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="2504" column="0" lean-forward="true" selection-start-line="2504" selection-start-column="0" selection-end-line="2504" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="243" column="37" lean-forward="true" selection-start-line="243" selection-start-column="37" selection-end-line="243" selection-end-column="37" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -28,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="videocalltest.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="videocalltest.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/videocalltest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="682" column="51" lean-forward="false" selection-start-line="682" selection-start-column="50" selection-end-line="682" selection-end-column="51" />
+            <state relative-caret-position="11092">
+              <caret line="685" column="24" lean-forward="true" selection-start-line="685" selection-start-column="24" selection-end-line="685" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1512552719113" expanded="true" signature="34675:34686" ph="..." />
@@ -412,7 +410,7 @@
       <workItem from="1512306156262" duration="2600000" />
       <workItem from="1512311276137" duration="2807000" />
       <workItem from="1512378910477" duration="15171000" />
-      <workItem from="1512549889024" duration="2862000" />
+      <workItem from="1512549889024" duration="3055000" />
     </task>
     <task id="LOCAL-00001" summary="some fixes">
       <created>1511423710253</created>
@@ -470,11 +468,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512550460709</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="videocalltest fixed">
+      <created>1512552791085</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1512552791085</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62064000" />
+    <option name="totallyTimeSpent" value="62257000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1613" height="883" extended-state="6" />
@@ -885,20 +890,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/janus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="2504" column="0" lean-forward="true" selection-start-line="2504" selection-start-column="0" selection-end-line="2504" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/videocalltest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="682" column="51" lean-forward="false" selection-start-line="682" selection-start-column="50" selection-end-line="682" selection-end-column="51" />
+        <state relative-caret-position="11092">
+          <caret line="685" column="24" lean-forward="true" selection-start-line="685" selection-start-column="24" selection-end-line="685" selection-end-column="24" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1512552719113" expanded="true" signature="34675:34686" ph="..." />
@@ -909,6 +904,16 @@
             <marker date="1512552719113" expanded="true" signature="35439:35449" ph="..." />
             <marker date="1512552719113" expanded="true" signature="35597:35607" ph="..." />
             <marker date="1512552719113" expanded="true" signature="35755:35765" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/janus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="243" column="37" lean-forward="true" selection-start-line="243" selection-start-column="37" selection-end-line="243" selection-end-column="37" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>

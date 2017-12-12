@@ -44,9 +44,9 @@
 //
 var server = null;
 if(window.location.protocol === 'http:')
-    server = "http://192.168.137.215:8088/janus";
+    server = "http://192.168.137.59:8088/janus";
 else
-    server = "http://192.168.137.215:8088/janus";
+    server = "http://192.168.137.59:8088/janus";
 
 //CM by Me
 //server = "/janus";

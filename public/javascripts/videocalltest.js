@@ -36,7 +36,7 @@
 //		var server = [
 //			"ws://" + window.location.hostname + ":8188",
 //			"/janus"
-//		];
+//		]
 //
 // This will tell the library to try connecting to each of the servers
 // in the presented order. The first working server will be used for
@@ -46,7 +46,7 @@ var server = null;
 if(window.location.protocol === 'http:')
     server = "http://192.168.137.215:8088/janus";
 else
-    server = "https://192.168.137.215:8089/janus";
+    server = "http://192.168.137.215:8088/janus";
 
 //CM by Me
 //server = "/janus";

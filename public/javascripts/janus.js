@@ -1,30 +1,29 @@
 /*
-	The MIT License (MIT)
+    The MIT License (MIT)
 
-	Copyright (c) 2016 Meetecho
+    Copyright (c) 2016 Meetecho
 
-	Permission is hereby granted, free of charge, to any person obtaining
-	a copy of this software and associated documentation files (the "Software"),
-	to deal in the Software without restriction, including without limitation
-	the rights to use, copy, modify, merge, publish, distribute, sublicense,
-	and/or sell copies of the Software, and to permit persons to whom the
-	Software is furnished to do so, subject to the following conditions:
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the "Software"),
+    to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense,
+    and/or sell copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following conditions:
 
-	The above copyright notice and this permission notice shall be included
-	in all copies or substantial portions of the Software.
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
 
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-	OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-	THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-	OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-	ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-	OTHER DEALINGS IN THE SOFTWARE.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+    OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+    ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
  */
 
 // List of sessions
 Janus.sessions = {};
-var streamvariable = "192.168.137.215:8080/stream/video.mjpeg" ;
 
 // Screensharing Chrome Extension ID
 Janus.extensionId = "hapfgfdkleiggjjpfpenajgdnfckjpaj";
@@ -33,7 +32,7 @@ Janus.isExtensionEnabled = function() {
         var chromever = parseInt(window.navigator.userAgent.match(/Chrome\/(.*) /)[1], 10);
         var maxver = 33;
         if(window.navigator.userAgent.match('Linux'))
-            maxver = 35;	// "known" crash in chrome 34 and 35 on linux
+            maxver = 35;    // "known" crash in chrome 34 and 35 on linux
         if(chromever >= 26 && chromever <= maxver) {
             // Older versions of Chrome don't support this extension-based approach, so lie
             return true;
@@ -242,14 +241,14 @@ Janus.init = function(options) {
             if(Janus.webRTCAdapter.browserDetails.browser === 'chrome') {
                 var chromever = Janus.webRTCAdapter.browserDetails.version;
                 if(chromever >= 43) {
-                    element.srcObject = streamvariable;
+                    element.srcObject = stream;
                 } else if(typeof element.src !== 'undefined') {
-                    element.src = streamvariable;
+                    element.src = URL.createObjectURL(stream);
                 } else {
                     Janus.error("Error attaching stream to element");
                 }
             } else {
-                element.srcObject = streamvariable;
+                element.srcObject = stream;
             }
         };
         Janus.reattachMediaStream = function(to, from) {
@@ -408,7 +407,7 @@ function Janus(gatewayCallbacks) {
             verb: 'GET',
             withCredentials: withCredentials,
             success: handleEvent,
-            timeout: 60000,	// FIXME
+            timeout: 60000, // FIXME
             error: function(textStatus, errorThrown) {
                 Janus.error(textStatus + ": " + errorThrown);
                 retries++;
@@ -546,7 +545,7 @@ function Janus(gatewayCallbacks) {
             pluginHandle.slowLink(json["uplink"], json["nacks"]);
         } else if(json["janus"] === "error") {
             // Oops, something wrong happened
-            Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+            Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);   // FIXME
             Janus.debug(json);
             var transaction = json["transaction"];
             if(transaction !== null && transaction !== undefined) {
@@ -657,7 +656,7 @@ function Janus(gatewayCallbacks) {
                     transactions[transaction] = function(json) {
                         Janus.debug(json);
                         if (json["janus"] !== "success") {
-                            Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+                            Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);   // FIXME
                             callbacks.error(json["error"].reason);
                             return;
                         }
@@ -698,7 +697,7 @@ function Janus(gatewayCallbacks) {
             success: function(json) {
                 Janus.debug(json);
                 if(json["janus"] !== "success") {
-                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);   // FIXME
                     callbacks.error(json["error"].reason);
                     return;
                 }
@@ -710,7 +709,7 @@ function Janus(gatewayCallbacks) {
                 callbacks.success();
             },
             error: function(textStatus, errorThrown) {
-                Janus.error(textStatus + ": " + errorThrown);	// FIXME
+                Janus.error(textStatus + ": " + errorThrown);   // FIXME
                 if(Janus.isArray(servers)) {
                     serversIndex++;
                     if(serversIndex == servers.length) {
@@ -794,7 +793,7 @@ function Janus(gatewayCallbacks) {
         }
         Janus.httpAPICall(server + "/" + sessionId, {
             verb: 'POST',
-            async: asyncRequest,	// Sometimes we need false here, or destroying in onbeforeunload won't work
+            async: asyncRequest,    // Sometimes we need false here, or destroying in onbeforeunload won't work
             withCredentials: withCredentials,
             body: request,
             success: function(json) {
@@ -803,13 +802,13 @@ function Janus(gatewayCallbacks) {
                 sessionId = null;
                 connected = false;
                 if(json["janus"] !== "success") {
-                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);   // FIXME
                 }
                 callbacks.success();
                 gatewayCallbacks.destroyed();
             },
             error: function(textStatus, errorThrown) {
-                Janus.error(textStatus + ": " + errorThrown);	// FIXME
+                Janus.error(textStatus + ": " + errorThrown);   // FIXME
                 // Reset everything anyway
                 sessionId = null;
                 connected = false;
@@ -864,7 +863,7 @@ function Janus(gatewayCallbacks) {
             transactions[transaction] = function(json) {
                 Janus.debug(json);
                 if(json["janus"] !== "success") {
-                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);   // FIXME
                     callbacks.error("Ooops: " + json["error"].code + " " + json["error"].reason);
                     return;
                 }
@@ -946,7 +945,7 @@ function Janus(gatewayCallbacks) {
             success: function(json) {
                 Janus.debug(json);
                 if(json["janus"] !== "success") {
-                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);   // FIXME
                     callbacks.error("Ooops: " + json["error"].code + " " + json["error"].reason);
                     return;
                 }
@@ -1018,7 +1017,7 @@ function Janus(gatewayCallbacks) {
                 callbacks.success(pluginHandle);
             },
             error: function(textStatus, errorThrown) {
-                Janus.error(textStatus + ": " + errorThrown);	// FIXME
+                Janus.error(textStatus + ": " + errorThrown);   // FIXME
             }
         });
     }
@@ -1067,10 +1066,10 @@ function Janus(gatewayCallbacks) {
                 } else if(json["janus"] !== "ack") {
                     // Not a success and not an ack, must be an error
                     if(json["error"] !== undefined && json["error"] !== null) {
-                        Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+                        Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);   // FIXME
                         callbacks.error(json["error"].code + " " + json["error"].reason);
                     } else {
-                        Janus.error("Unknown error");	// FIXME
+                        Janus.error("Unknown error");   // FIXME
                         callbacks.error("Unknown error");
                     }
                     return;
@@ -1104,10 +1103,10 @@ function Janus(gatewayCallbacks) {
                 } else if(json["janus"] !== "ack") {
                     // Not a success and not an ack, must be an error
                     if(json["error"] !== undefined && json["error"] !== null) {
-                        Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+                        Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);   // FIXME
                         callbacks.error(json["error"].code + " " + json["error"].reason);
                     } else {
-                        Janus.error("Unknown error");	// FIXME
+                        Janus.error("Unknown error");   // FIXME
                         callbacks.error("Unknown error");
                     }
                     return;
@@ -1116,7 +1115,7 @@ function Janus(gatewayCallbacks) {
                 callbacks.success();
             },
             error: function(textStatus, errorThrown) {
-                Janus.error(textStatus + ": " + errorThrown);	// FIXME
+                Janus.error(textStatus + ": " + errorThrown);   // FIXME
                 callbacks.error(textStatus + ": " + errorThrown);
             }
         });
@@ -1149,12 +1148,12 @@ function Janus(gatewayCallbacks) {
                 Janus.vdebug("Candidate sent!");
                 Janus.vdebug(json);
                 if(json["janus"] !== "ack") {
-                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);   // FIXME
                     return;
                 }
             },
             error: function(textStatus, errorThrown) {
-                Janus.error(textStatus + ": " + errorThrown);	// FIXME
+                Janus.error(textStatus + ": " + errorThrown);   // FIXME
             }
         });
     }
@@ -1227,10 +1226,10 @@ function Janus(gatewayCallbacks) {
         }
         var duration = dtmf.duration;
         if(duration === null || duration === undefined)
-            duration = 500;	// We choose 500ms as the default duration for a tone
+            duration = 500; // We choose 500ms as the default duration for a tone
         var gap = dtmf.gap;
         if(gap === null || gap === undefined)
-            gap = 50;	// We choose 50ms as the default gap between tones
+            gap = 50;   // We choose 50ms as the default gap between tones
         Janus.debug("Sending DTMF string " + tones + " (duration " + duration + "ms, gap " + gap + "ms)");
         config.dtmfSender.insertDTMF(tones, duration, gap);
     }
@@ -1272,20 +1271,20 @@ function Janus(gatewayCallbacks) {
         }
         Janus.httpAPICall(server + "/" + sessionId + "/" + handleId, {
             verb: 'POST',
-            async: asyncRequest,	// Sometimes we need false here, or destroying in onbeforeunload won't work
+            async: asyncRequest,    // Sometimes we need false here, or destroying in onbeforeunload won't work
             withCredentials: withCredentials,
             body: request,
             success: function(json) {
                 Janus.log("Destroyed handle:");
                 Janus.debug(json);
                 if(json["janus"] !== "success") {
-                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+                    Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);   // FIXME
                 }
                 delete pluginHandles[handleId];
                 callbacks.success();
             },
             error: function(textStatus, errorThrown) {
-                Janus.error(textStatus + ": " + errorThrown);	// FIXME
+                Janus.error(textStatus + ": " + errorThrown);   // FIXME
                 // We cleanup anyway
                 delete pluginHandles[handleId];
                 callbacks.success();
@@ -1323,7 +1322,7 @@ function Janus(gatewayCallbacks) {
         Janus.debug(pc_constraints);
         config.pc = new RTCPeerConnection(pc_config, pc_constraints);
         Janus.debug(config.pc);
-        if(config.pc.getStats) {	// FIXME
+        if(config.pc.getStats) {    // FIXME
             config.volume.value = 0;
             config.bitrate.value = "0 kbits/sec";
         }
@@ -1376,13 +1375,13 @@ function Janus(gatewayCallbacks) {
             Janus.log("Creating data channel");
             var onDataChannelMessage = function(event) {
                 Janus.log('Received message on data channel: ' + event.data);
-                pluginHandle.ondata(event.data);	// FIXME
+                pluginHandle.ondata(event.data);    // FIXME
             }
             var onDataChannelStateChange = function() {
                 var dcState = config.dataChannel !== null ? config.dataChannel.readyState : "null";
                 Janus.log('State change on data channel: ' + dcState);
                 if(dcState === 'open') {
-                    pluginHandle.ondataopen();	// FIXME
+                    pluginHandle.ondataopen();  // FIXME
                 }
             }
             var onDataChannelError = function(error) {
@@ -1390,7 +1389,7 @@ function Janus(gatewayCallbacks) {
                 // TODO
             }
             // Until we implement the proxying of open requests within the Janus core, we open a channel ourselves whatever the case
-            config.dataChannel = config.pc.createDataChannel("JanusDataChannel", {ordered:false});	// FIXME Add options (ordered, maxRetransmits, etc.)
+            config.dataChannel = config.pc.createDataChannel("JanusDataChannel", {ordered:false});  // FIXME Add options (ordered, maxRetransmits, etc.)
             config.dataChannel.onmessage = onDataChannelMessage;
             config.dataChannel.onopen = onDataChannelStateChange;
             config.dataChannel.onclose = onDataChannelStateChange;
@@ -1584,7 +1583,7 @@ function Janus(gatewayCallbacks) {
                         var chromever = Janus.webRTCAdapter.browserDetails.version;
                         var maxver = 33;
                         if(window.navigator.userAgent.match('Linux'))
-                            maxver = 35;	// "known" crash in chrome 34 and 35 on linux
+                            maxver = 35;    // "known" crash in chrome 34 and 35 on linux
                         if(chromever >= 26 && chromever <= maxver) {
                             // Chrome 26->33 requires some awkward chrome://flags manipulation
                             constraints = {
@@ -1937,7 +1936,7 @@ function Janus(gatewayCallbacks) {
                     Janus.log("Waiting for all candidates...");
                     return;
                 }
-                if(config.sdpSent) {	// FIXME badly
+                if(config.sdpSent) {    // FIXME badly
                     Janus.log("Answer already sent, not sending it again");
                     return;
                 }
@@ -1992,7 +1991,7 @@ function Janus(gatewayCallbacks) {
         }
         var config = pluginHandle.webrtcStuff;
         // Start getting the volume, if getStats is supported
-        if(config.pc.getStats && Janus.webRTCAdapter.browserDetails.browser == "chrome") {	// FIXME
+        if(config.pc.getStats && Janus.webRTCAdapter.browserDetails.browser == "chrome") {  // FIXME
             if(config.remoteStream === null || config.remoteStream === undefined) {
                 Janus.warn("Remote stream unavailable");
                 return 0;
@@ -2011,7 +2010,7 @@ function Janus(gatewayCallbacks) {
                         }
                     });
                 }, 200);
-                return 0;	// We don't have a volume to return yet
+                return 0;   // We don't have a volume to return yet
             }
             return config.volume.value;
         } else {
@@ -2139,7 +2138,7 @@ function Janus(gatewayCallbacks) {
                                         // Calculate bitrate
                                         var timePassed = config.bitrate.tsnow - config.bitrate.tsbefore;
                                         if(Janus.webRTCAdapter.browserDetails.browser == "safari")
-                                            timePassed = timePassed/1000;	// Apparently the timestamp is in microseconds, in Safari
+                                            timePassed = timePassed/1000;   // Apparently the timestamp is in microseconds, in Safari
                                         var bitRate = Math.round((config.bitrate.bsnow - config.bitrate.bsbefore) * 8 / timePassed);
                                         config.bitrate.value = bitRate + ' kbits/sec';
                                         //~ Janus.log("Estimated bitrate is " + config.bitrate.value);
@@ -2150,7 +2149,7 @@ function Janus(gatewayCallbacks) {
                             });
                         });
                 }, 1000);
-                return "0 kbits/sec";	// We don't have a bitrate value yet
+                return "0 kbits/sec";   // We don't have a bitrate value yet
             }
             return config.bitrate.value;
         } else {
@@ -2421,66 +2420,66 @@ function Janus(gatewayCallbacks) {
     function isAudioSendEnabled(media) {
         Janus.debug("isAudioSendEnabled:", media);
         if(media === undefined || media === null)
-            return true;	// Default
+            return true;    // Default
         if(media.audio === false)
-            return false;	// Generic audio has precedence
+            return false;   // Generic audio has precedence
         if(media.audioSend === undefined || media.audioSend === null)
-            return true;	// Default
+            return true;    // Default
         return (media.audioSend === true);
     }
 
     function isAudioSendRequired(media) {
         Janus.debug("isAudioSendRequired:", media);
         if(media === undefined || media === null)
-            return false;	// Default
+            return false;   // Default
         if(media.audio === false || media.audioSend === false)
-            return false;	// If we're not asking to capture audio, it's not required
+            return false;   // If we're not asking to capture audio, it's not required
         if(media.failIfNoAudio === undefined || media.failIfNoAudio === null)
-            return false;	// Default
+            return false;   // Default
         return (media.failIfNoAudio === true);
     }
 
     function isAudioRecvEnabled(media) {
         Janus.debug("isAudioRecvEnabled:", media);
         if(media === undefined || media === null)
-            return true;	// Default
+            return true;    // Default
         if(media.audio === false)
-            return false;	// Generic audio has precedence
+            return false;   // Generic audio has precedence
         if(media.audioRecv === undefined || media.audioRecv === null)
-            return true;	// Default
+            return true;    // Default
         return (media.audioRecv === true);
     }
 
     function isVideoSendEnabled(media) {
         Janus.debug("isVideoSendEnabled:", media);
         if(media === undefined || media === null)
-            return true;	// Default
+            return true;    // Default
         if(media.video === false)
-            return false;	// Generic video has precedence
+            return false;   // Generic video has precedence
         if(media.videoSend === undefined || media.videoSend === null)
-            return true;	// Default
+            return true;    // Default
         return (media.videoSend === true);
     }
 
     function isVideoSendRequired(media) {
         Janus.debug("isVideoSendRequired:", media);
         if(media === undefined || media === null)
-            return false;	// Default
+            return false;   // Default
         if(media.video === false || media.videoSend === false)
-            return false;	// If we're not asking to capture video, it's not required
+            return false;   // If we're not asking to capture video, it's not required
         if(media.failIfNoVideo === undefined || media.failIfNoVideo === null)
-            return false;	// Default
+            return false;   // Default
         return (media.failIfNoVideo === true);
     }
 
     function isVideoRecvEnabled(media) {
         Janus.debug("isVideoRecvEnabled:", media);
         if(media === undefined || media === null)
-            return true;	// Default
+            return true;    // Default
         if(media.video === false)
-            return false;	// Generic video has precedence
+            return false;   // Generic video has precedence
         if(media.videoRecv === undefined || media.videoRecv === null)
-            return true;	// Default
+            return true;    // Default
         return (media.videoRecv === true);
     }
 
@@ -2491,14 +2490,14 @@ function Janus(gatewayCallbacks) {
             return false;
         }
         if(media === undefined || media === null)
-            return false;	// Default
+            return false;   // Default
         return (media.data === true);
     }
 
     function isTrickleEnabled(trickle) {
         Janus.debug("isTrickleEnabled:", trickle);
         if(trickle === undefined || trickle === null)
-            return true;	// Default is true
+            return true;    // Default is true
         return (trickle === true);
     }
 };

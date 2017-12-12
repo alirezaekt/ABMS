@@ -4,7 +4,6 @@
     <list default="true" id="441ae590-a621-4636-8c8a-a4bac26a3037" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/janus.js" afterPath="$PROJECT_DIR$/public/javascripts/janus.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/videocalltest.js" afterPath="$PROJECT_DIR$/public/javascripts/videocalltest.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,21 +15,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="janus.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="janus.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/janus.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41956">
-              <caret line="2490" column="9" lean-forward="false" selection-start-line="2490" selection-start-column="9" selection-end-line="2490" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="284">
+              <caret line="4997" column="5" lean-forward="false" selection-start-line="4997" selection-start-column="4" selection-end-line="4997" selection-end-column="5" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="videocalltest.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="videocalltest.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/videocalltest.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="490" column="25" lean-forward="true" selection-start-line="490" selection-start-column="25" selection-end-line="490" selection-end-column="25" />
+              <caret line="481" column="39" lean-forward="true" selection-start-line="481" selection-start-column="39" selection-end-line="481" selection-end-column="39" />
               <folding>
                 <marker date="1512557324353" expanded="true" signature="34673:34684" ph="..." />
                 <marker date="1512557324353" expanded="true" signature="34820:34830" ph="..." />
@@ -184,8 +185,8 @@
         <option value="$PROJECT_DIR$/public/views/index.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/demo.css" />
         <option value="$PROJECT_DIR$/public/views/videocalltest.html" />
-        <option value="$PROJECT_DIR$/public/javascripts/janus.js" />
         <option value="$PROJECT_DIR$/public/javascripts/videocalltest.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/janus.js" />
       </list>
     </option>
   </component>
@@ -400,7 +401,7 @@
       <workItem from="1512549889024" duration="9150000" />
       <workItem from="1512897201551" duration="615000" />
       <workItem from="1512906660677" duration="916000" />
-      <workItem from="1513064082541" duration="893000" />
+      <workItem from="1513064082541" duration="2159000" />
     </task>
     <task id="LOCAL-00001" summary="some fixes">
       <created>1511423710253</created>
@@ -472,11 +473,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512552976350</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="videocalltest fixed">
+      <created>1513066103043</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1513066103043</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70776000" />
+    <option name="totallyTimeSpent" value="72042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1613" height="883" extended-state="6" />
@@ -491,7 +499,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858992" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32858992" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -858,14 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/janus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41956">
-          <caret line="2490" column="9" lean-forward="false" selection-start-line="2490" selection-start-column="9" selection-end-line="2490" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
@@ -887,7 +887,7 @@
     <entry file="file://$PROJECT_DIR$/public/javascripts/videocalltest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="490" column="25" lean-forward="true" selection-start-line="490" selection-start-column="25" selection-end-line="490" selection-end-column="25" />
+          <caret line="481" column="39" lean-forward="true" selection-start-line="481" selection-start-column="39" selection-end-line="481" selection-end-column="39" />
           <folding>
             <marker date="1512557324353" expanded="true" signature="34673:34684" ph="..." />
             <marker date="1512557324353" expanded="true" signature="34820:34830" ph="..." />
@@ -897,6 +897,16 @@
             <marker date="1512557324353" expanded="true" signature="35437:35447" ph="..." />
             <marker date="1512557324353" expanded="true" signature="35595:35605" ph="..." />
             <marker date="1512557324353" expanded="true" signature="35753:35763" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/janus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="4997" column="5" lean-forward="false" selection-start-line="4997" selection-start-column="4" selection-end-line="4997" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>

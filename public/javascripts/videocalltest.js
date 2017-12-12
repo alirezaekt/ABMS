@@ -44,10 +44,10 @@
 //
 var server = null;
 if(window.location.protocol === 'http:')
-    server = "http://" + window.location.hostname + ":8088/janus";
+    server = "http://" + "192.168.137.59" + ":8088/janus";
 else
-    server = "https://" + window.location.hostname + ":8089/janus";
-server = "/janus";
+    server = "https://" + "192.168.137.59" + ":8089/janus";
+//server = "/janus";
 
 var janus = null;
 var videocall = null;

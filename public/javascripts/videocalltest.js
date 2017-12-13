@@ -70,7 +70,7 @@ $(document).ready(function() {
     // Initialize the library (console debug enabled)
     Janus.init({debug: true, callback: function() {
         // Use a button to start the demo
-        $('#start').click(function() {
+       // $('#start').click(function() {
             if(started)
                 return;
             started = true;
@@ -98,7 +98,8 @@ $(document).ready(function() {
                                     $('#videocall').removeClass('hide').show();
                                     $('#login').removeClass('hide').show();
                                     $('#registernow').removeClass('hide').show();
-                                    $('#register').click(registerUsername);
+                                    //$('#register').click(registerUsername);
+                                    registerUsername();
                                     $('#username').focus();
                                     $('#start').removeAttr('disabled').html("Stop")
                                         .click(function() {
@@ -302,7 +303,7 @@ $(document).ready(function() {
                                     $("#videoleft").parent().block({
                                         message: '<b>Publishing...</b>',
                                         css: {
-                                            border: 'none',
+                                            order: 'none',
                                             backgroundColor: 'transparent',
                                             color: 'white'
                                         }
@@ -464,7 +465,7 @@ $(document).ready(function() {
                         window.location.reload();
                     }
                 });
-        });
+        //});
     }});
 });
 
@@ -485,22 +486,22 @@ function checkEnter(field, event) {
 
 function registerUsername() {
     // Try a registration
-    $('#username').attr('disabled', true);
-    $('#register').attr('disabled', true).unbind('click');
-    var username = $('#username').val();
-    if(username === "") {
-        bootbox.alert("Insert a username to register (e.g., pippo)");
-        $('#username').removeAttr('disabled');
-        $('#register').removeAttr('disabled').click(registerUsername);
-        return;
-    }
-    if(/[^a-zA-Z0-9]/.test(username)) {
-        bootbox.alert('Input is not alphanumeric');
-        $('#username').removeAttr('disabled').val("");
-        $('#register').removeAttr('disabled').click(registerUsername);
-        return;
-    }
-    var register = { "request": "register", "username": username };
+    // $('#username').attr('disabled', true);
+    // $('#register').attr('disabled', true).unbind('click');
+    // var username = $('#username').val();
+    // if(username === "") {
+    //     bootbox.alert("Insert a username to register (e.g., pippo)");
+    //     $('#username').removeAttr('disabled');
+    //     $('#register').removeAttr('disabled').click(registerUsername);
+    //     return;
+    // }
+    // if(/[^a-zA-Z0-9]/.test(username)) {
+    //     bootbox.alert('Input is not alphanumeric');
+    //     $('#username').removeAttr('disabled').val("");
+    //     $('#register').removeAttr('disabled').click(registerUsername);
+    //     return;
+    // }
+    var register = { "request": "register", "username": "alireza" };
     videocall.send({"message": register});
 }
 

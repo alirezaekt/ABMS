@@ -44,9 +44,9 @@
 //
 var server = null;
 if(window.location.protocol === 'http:')
-    server = "http://" + "192.168.137.59" + ":8088/janus";
+    server = "http://" + "192.168.137.88" + ":8088/janus";
 else
-    server = "https://" + "192.168.137.59" + ":8089/janus";
+    server = "https://" + "192.168.137.88" + ":8089/janus";
 //server = "/janus";
 
 var janus = null;
@@ -297,7 +297,7 @@ $(document).ready(function() {
                                     Janus.debug(stream);
                                     $('#videos').removeClass('hide').show();
                                     if($('#myvideo').length === 0)
-                                        $('#videoleft').append('<video class="rounded centered" id="myvideo" width=320 height=240 autoplay muted="muted"/>');
+                                        $('#videoleft').append('<video class="rounded centered myweed" id="myvideo"  autoplay muted="muted"/>');
                                     Janus.attachMediaStream($('#myvideo').get(0), stream);
                                     $("#myvideo").get(0).muted = "muted";
                                     $("#videoleft").parent().block({
@@ -309,7 +309,7 @@ $(document).ready(function() {
                                         }
                                     });
                                     // No remote video yet
-                                    $('#videoright').append('<video class="rounded centered" id="waitingvideo" width=320 height=240 />');
+                                    $('#videoright').append('<video class="rounded centered" id="waitingvideo" width=640px height=auto />');
                                     if(spinner == null) {
                                         var target = document.getElementById('videoright');
                                         spinner = new Spinner({top:100}).spin(target);
@@ -339,7 +339,7 @@ $(document).ready(function() {
                                                 $('#remotevideo').show();
                                         }
                                     }
-                                    $('#videoright').append('<video class="rounded centered hide" id="remotevideo" width=320 height=240 autoplay/>');
+                                    $('#videoright').append('<video class="rounded centered hide remweed" id="remotevideo"   autoplay/>');
                                     // Show the video, hide the spinner and show the resolution when we get a playing event
                                     $("#remotevideo").bind("playing", function () {
                                         $('#waitingvideo').remove();

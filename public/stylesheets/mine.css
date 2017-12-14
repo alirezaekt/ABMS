@@ -157,16 +157,42 @@
 }
 
 
-.videorast {
-  display: block !important;
-  position: absolute !important;
-  left: 0px !important;
-  width: 80vw !important;
-  border: 3px !important;
-  border-color: red !important;
+/*.videorast {*/
+
+  /*z-index: 999999 !important;*/
+  /*display: block !important;*/
+  /*position: absolute !important;*/
+  /*top: 0px !important;*/
+  /*left: 0px !important;*/
+  /*width: 80vw !important;*/
+  /*border: 3px !important;*/
+  /*border-color: red !important;*/
+
+/*}*/
+
+.videochap {
+  bottom: 0px;
+}
+.remweed {
+  z-index: 1000;
+  top: 10vh;
+  max-width: 80vw;
+  left: 10vw;
+  margin: auto;
+
+}
+.myweed {
+  z-index: 1001;
+  max-width: 20vw;
+  left: 10vw;
+  top: 70vh;
+
 
 }
 
+.btweed {
+  z-index: 1002;
+}
 
 /*afddsa*/
 

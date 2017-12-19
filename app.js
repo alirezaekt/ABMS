@@ -12,12 +12,6 @@ var videocalltest = require('./routes/videocalltest');
 var app = express();
 
 
-
-
-
-
-
-
 app.set('views', path.join(__dirname, 'public/views'));
 
 // view engine setup
@@ -55,3 +49,11 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+
+
+
+
+
+
+

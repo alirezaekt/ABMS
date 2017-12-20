@@ -32,7 +32,7 @@
 }
 
 .nodeicon {
-  width: auto;
+
   max-width:100px;
   width:100%;
   height: auto;
@@ -170,33 +170,112 @@
 
 /*}*/
 
-.videochap {
-  bottom: 0px;
-}
-.remweed {
-  z-index: 1000;
-  top: 10vh;
-  max-width: 80vw;
-  left: 10vw;
-  margin: auto;
-
-}
-.myweed {
-  z-index: 1001;
-  max-width: 20vw;
-  left: 10vw;
-  top: 70vh;
 
 
+
+
+.mycll {
+  width: 40%!important;
+  left:30% !important;
+  z-index: 0;
 }
 
-.btweed {
-  z-index: 1002;
+.mybtt {
+  bottom: 10%!important;
+  display: block!important;
+  position: fixed!important;
+  width:30%!important;
+  left:35%!important;
+  z-index: 1005;
 }
-
 /*afddsa*/
 
+.panelx{
+  position: fixed;
+  left:10VW;
+  top:50px;
+  height:auto;
+  display: block;
+  width:80vw;
+}
+#videoright{
+  position: relative;
+  left:0;
+  width:100%;
+  height:100%;
+  top:0;
+  display: block;
+}
+#videoright .remweed{
+  position: relative;
+  width:100%;
+  height:100%;
+  margin:0;
+  max-height:800px;
+  padding:0;
+  left:0;
+  top:0;
+  display: block;
+}
 
 
+#videoleft{
+  position: absolute;
+  z-index: 1001;
+  left:35%;
+  right:0;
+  bottom:0;
+  width:30%;
+  height:auto;
+  display: block;
+}
+#videoleft .myweed{
+  position: relative;
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  left:0;
+  top:0;
+  display: block;
+}
+
+@media screen and (max-width: 700px) {
+  #videoleft{
+    position: relative;
+    z-index: 1001;
+    left:18%;
+    right:0;
+    bottom:0;
+    float: left;
+    clear: left;
+    width:64%;
+    height:auto;
+    display: block;
+  }
+  .panelx{
+    position: fixed;
+    left:2.5VW;
+    width:95vw;
+    height:auto;
+    display: block;
 
 
+  }
+  .panelx .btweed {
+    z-index: 1010;
+    width: auto;
+    position: absolute;
+    top:0;
+
+  }
+  .mybtt {
+    top:600px !important;
+    display: block!important;
+    position: fixed!important;
+    width: 50%!important;
+    height: 60px;
+    left: 25%!important;
+    z-index: 1005;
+  }
+}

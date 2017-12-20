@@ -37,11 +37,11 @@ summary {
 audio,
 canvas,
 progress,
-video {
-    display: block;
-    position: absolute;
-    /*vertical-align: center;*/
-}
+/*video {*/
+    /*display: block;*/
+    /*position: fixed;*/
+    /*!*vertical-align: center;*!*/
+/*}*/
 audio:not([controls]) {
     display: none;
     height: 0;

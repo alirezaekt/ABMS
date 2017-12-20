@@ -50,5 +50,5 @@ router.get('/serialp',function (req,res) {
     port.on('error', function(err) {
         console.log('Error: ', err.message);
     })
-    console.log("kir")
+    console.log("serialdone")
 });

@@ -113,14 +113,44 @@
 
 <script>
     $('#lgg').click(function () {
+        console.log("dokm")
         $.ajax({
             url:'/serialp'
         });
     });
+    $('body').on("click",".toggle",function () {
 
-    $('#lggt').click(function () {
-        if ($(this).attr('checked') instanceof undefined || $(this).attr('checked') === ''){
-            $(this).attr('checked', 'true');
+        if($(this).children('#lgt1')[0] !== undefined && $(this).children('#lgt1') !== "undefined")
+        {
+            if( this.className.split("off").length ===2){
+                console.log("onnn")
+                $.ajax({
+                    url:'/serialp'
+                });
+            }
+            if( this.className.split("off").length ===1){
+                console.log("offf")
+
+            }
+        }
+        if($(this).children('#lgt2')[0] !== undefined && $(this).children('#lgt2') !== "undefined")
+        {
+            if( this.className.split("off").length ===2){
+                console.log("onnn")
+            }
+            if( this.className.split("off").length ===1){
+                console.log("offf")
+
+            }
+        }
+
+
+    });
+
+    $('lgt1').parents('.toggle').click(function () {
+        console.log("booos2")
+        if ($(this).attr('off') instanceof undefined || $(this).attr('checked') === ''){
+            $(this).attr('off', 'true');
             console.log('test')
         }
         else{

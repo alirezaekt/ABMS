@@ -8,6 +8,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var voip = require('./routes/voip');
 var videocalltest = require('./routes/videocalltest');
+var settings = require('./routes/settings');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/voip', voip);
 app.use('/videocalltest', videocalltest);
+app.use('/settings', settings);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 
-
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index.html');
@@ -14,6 +13,9 @@ router.post('/admin', function(req, res) {
 
 });
 module.exports = router;
+
+
+//--- serial funcrions
 
 router.get('/serialp',function (req,res) {
     var buffer = new Buffer(3);

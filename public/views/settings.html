@@ -48,7 +48,11 @@
     <div class="row rowmine">
         <div class="col-sm-24 col-md-16 col-lg-12 text-center ">
             <div class="smartnode" align="left">
-                <span><b>UI Theme</b></span>
+                <span style="padding-left: 60px"><b>UI Theme</b></span>
+                <button onclick="changecolor()">Blue</button>
+                <button onclick="changecolor2()" style="background-color: #1e7e34">Green</button>
+
+
 
             </div>
         </div>
@@ -60,11 +64,19 @@
 
     </div>
 </div>
+
 <div align="center">
     <span style="">ABMS© 2017</span>
 </div>
 
-
+<script>
+    function changecolor() {
+        document.getElementsByClassName("smartnode").style.backgroundColor = "blue";
+    }
+    function changecolor2() {
+        document.getElementsByClassName("smartnode").style.backgroundColor = "green";
+    }
+</script>
 
 </body>
 </html>

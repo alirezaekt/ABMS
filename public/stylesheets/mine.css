@@ -1,27 +1,16 @@
-.sabii {
-  display:inline-block;
-  position: relative;
-  height: auto;
-  min-height: 70px;
-  border-radius:5px;
-  border:0px solid #022E40;
-  margin:auto;
-  padding:0;
-  margin-bottom: 30px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-bottom:30px;
-  background-color: #cccccc;
+.navbar {
+  position: fixed!important;
+  width: 100%!important;
+  top: 0!important;
+  z-index: 99999!important;
 }
 
 .smartnode ,.contactCard{
-
   padding: 10px;
   margin-top: 30px;
   border-radius: 4px;
   background-color: #dddddd;
   height: 210px;
-
 }
 
 .smartnode span{
@@ -75,14 +64,9 @@
   position: relative;
   margin-top:100px ;
   bottom: 0;
-  /*-ms-transform: translate(50px, 100px);*/
-  /*-webkit-transform: translate(50px, 100px);*/
-  /*transform: translate(-50%, -30%);*/
-  /*left:0px;*/
   right:4px;
   margin-left: 10px;
 }
-
 
 .nodeinfo {
   position: absolute;
@@ -93,7 +77,6 @@
   font-size: 22px;
   font-weight: bold;
   color: #007bff;
-
 }
 
 .toggle-on.btn {
@@ -153,7 +136,6 @@
   display: block;
 }
 
-
 .smartnode button{
   color: white;
   border-radius: 5px;
@@ -169,7 +151,6 @@
   background-color: #cccccc;
 }
 
-
 /*.videorast {*/
 
   /*z-index: 999999 !important;*/
@@ -182,10 +163,6 @@
   /*border-color: red !important;*/
 
 /*}*/
-
-
-
-
 
 .mycll {
   width: 40%!important;
@@ -201,7 +178,6 @@
   left:35%!important;
   z-index: 1005;
 }
-/*afddsa*/
 
 .panelx{
   position: fixed;
@@ -293,11 +269,3 @@
   }
 }
 
-
-.navbar {
-  position: fixed!important;
-  width: 100%!important;
-  top: 0px!important;
-  z-index: 99999!important;
-
-}

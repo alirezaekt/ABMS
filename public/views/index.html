@@ -26,7 +26,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/"><span style="color:007bff"><b>Home</b></span></a>
+        <a class="nav-link" href="/"><span style="color:#007bff"><b>Home</b></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="voip">Contacts</a>
@@ -55,15 +55,15 @@
             <div class="smartnode">
             Room1 <span style="">temperature<br></span>
             <img src="../images/thermometer.svg" class="  nodeicon" alt="Responsive image" >
-            <span class="nodeinfo" id="r1t1">23</span>
+            <span class="nodeinfo" id="r1t1">23°C</span>
             </div>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
             <div class="smartnode">
                 Room1 <span>light2<br></span>
-                <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
+                <img src="../images/bell-ringing.svg" class="  nodeicon" alt="Responsive image" >
                 <br>
-                <button id="r1l2">press</button>
+                <button id="r1l2">Ping</button>
             </div>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
@@ -109,6 +109,13 @@
                 <br><input type="checkbox" checked data-toggle="toggle" id="r3c1">
             </div>
         </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
+            <div class="smartnode">
+                Humidity Sensor <span><br></span>
+                <img src="../images/humidity.svg" class="  nodeicon" alt="Responsive image" >
+                <span class="nodeinfo" id="humsensor">34%</span>
+            </div>
+        </div>
 
     </div>
 </div>
@@ -132,21 +139,21 @@
 <script>
     $('#lgg').click(function () {
         console.log("dokm")
-        $.ajax({
-            url:'/serialp'
-        });
     });
     $('body').on("click",".toggle",function () {
         if($(this).children('#r1l1')[0] !== undefined && $(this).children('#r1l1') !== "undefined")
         {
             if( this.className.split("off").length ===2){
-                console.log("1onnn")
+                console.log("1on")
                 $.ajax({
                     url:'/serialp'
                 });
             }
             if( this.className.split("off").length ===1){
-                console.log("1offf")
+                console.log("1of")
+                $.ajax({
+                    url:'/serialp2'
+                });
             }
         }
         if($(this).children('#r2l1')[0] !== undefined && $(this).children('#r2l1') !== "undefined")

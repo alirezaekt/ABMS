@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="441ae590-a621-4636-8c8a-a4bac26a3037" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/mine.css" afterPath="$PROJECT_DIR$/public/stylesheets/mine.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/index.html" afterPath="$PROJECT_DIR$/public/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/settings.html" afterPath="$PROJECT_DIR$/public/views/settings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -457,7 +453,7 @@
       <workItem from="1513770574618" duration="1313000" />
       <workItem from="1514275164914" duration="10089000" />
       <workItem from="1514293976224" duration="3368000" />
-      <workItem from="1514359119013" duration="3234000" />
+      <workItem from="1514359119013" duration="3294000" />
     </task>
     <task id="LOCAL-00001" summary="some fixes">
       <created>1511423710253</created>
@@ -606,11 +602,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514278003612</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added new elements">
+      <created>1514362655315</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1514362655315</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132759000" />
+    <option name="totallyTimeSpent" value="132819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="895" extended-state="6" />
@@ -657,7 +660,8 @@
     <MESSAGE value="videocalltest fixed" />
     <MESSAGE value="videocall ui fixed" />
     <MESSAGE value="serial toggle added" />
-    <option name="LAST_COMMIT_MESSAGE" value="serial toggle added" />
+    <MESSAGE value="added new elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new elements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

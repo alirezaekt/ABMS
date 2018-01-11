@@ -9,9 +9,7 @@ var users = require('./routes/users');
 var voip = require('./routes/voip');
 var videocalltest = require('./routes/videocalltest');
 var settings = require('./routes/settings');
-
 var app = express();
-
 
 app.set('views', path.join(__dirname, 'public/views'));
 

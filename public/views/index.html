@@ -48,7 +48,7 @@
             <div class="smartnode">
             Room1 <span>light1<br></span>
             <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
-            <br><input type="checkbox"  data-toggle="toggle" id="r1l1">
+            <br><input type="checkbox"  checked data-toggle="toggle" id="r1l1">
             </div>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
@@ -137,6 +137,13 @@
 <script src="../javascripts/socket.io.js"></script>
 
 <script>
+
+    $(document).ready(function(){
+        setInterval(function(){
+            getDatasFrequently()
+        },500);
+
+    });
     $('#lgg').click(function () {
         console.log("dokm")
     });
@@ -144,13 +151,14 @@
         if($(this).children('#r1l1')[0] !== undefined && $(this).children('#r1l1') !== "undefined")
         {
             if( this.className.split("off").length ===2){
-                console.log("1on")
+                console.log("1on");
                 $.ajax({
                     url:'/serialp'
+
                 });
             }
             if( this.className.split("off").length ===1){
-                console.log("1of")
+                console.log("1of");
                 $.ajax({
                     url:'/serialp2'
                 });
@@ -166,30 +174,50 @@
             }
         }
     });
+function getDatasFrequently() {
+    $.ajax({
+        url: "getAllData",
+        method: "GET",
+        success: function (datas) {
+            console.log(datas);
+            $.each(datas, function (index, data) {
+                var element = {};
+                switch (data["number"]) {
+                    case 5: {
+                        element = $('#r1l1');
+                        if (element) {
+                            if (element.parents(".toggle")[0].className.split("off").length === 1) {
+                                if (data["value"] === 0)
+                                    element.parents(".toggle").click();
+                            }
+                            else if (element.parents(".toggle")[0].className.split("off").length === 2) {
+                                if (data["value"] === 1)
+                                    element.parents(".toggle").click();
+                            }
+                        }
+                    }
+                        break;
+                    case 4: {
+                        element = $('#r2l1');
+                        if (element) {
+                            if (element.parents(".toggle")[0].className.split("off").length === 1) {
+                                if (data["value"] === 0)
+                                    element.parents(".toggle").click();
+                            }
+                            else if (element.parents(".toggle")[0].className.split("off").length === 2) {
+                                if (data["value"] === 1)
+                                    element.parents(".toggle").click();
+                            }
+                        }
+                    }
+                        break;
+                }
+            });
+        }
+    });
+}
+</script>
+<script>
 
 </script>
-<!--<script>-->
-    <!--var socket = io(); //load socket.io-client and connect to the host that serves the page-->
-    <!--window.addEventListener("load", function(){ //when page loads-->
-        <!--var lightbox = document.getElementById("light");-->
-        <!--lightbox.addEventListener("change", function() { //add event listener for when checkbox cha$-->
-            <!--socket.emit("light",Number(this.checked)); //send button status to server (as 1 or 0)-->
-        <!--});-->
-    <!--});-->
-    <!--socket.on('light', function (data) { //get button status from client-->
-        <!--document.getElementById("light").checked = data; //change checkbox according to push button$-->
-        <!--socket.emit("light", data); //send push button status to back to server-->
-    <!--});-->
-
-    <!--window.addEventListener("load", function(){ //when page loads-->
-        <!--var lightbox2 = document.getElementById("light2");-->
-        <!--lightbox2.addEventListener("change", function() { //add event listener for when checkbox cha$-->
-            <!--socket.emit("light2",Number(this.checked)); //send button status to server (as 1 or 0)-->
-        <!--});-->
-    <!--});-->
-    <!--socket.on('light2', function (data) { //get button status from client-->
-        <!--document.getElementById("light2").checked = data; //change checkbox according to push button$-->
-        <!--socket.emit("light2", data); //send push button status to back to server-->
-    <!--});-->
-<!--</script>-->
 </html>

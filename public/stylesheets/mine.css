@@ -151,17 +151,6 @@
   background-color: #cccccc;
 }
 
-/*.videorast {*/
-
-  /*z-index: 999999 !important;*/
-  /*display: block !important;*/
-  /*position: absolute !important;*/
-  /*top: 0px !important;*/
-  /*left: 0px !important;*/
-  /*width: 80vw !important;*/
-  /*border: 3px !important;*/
-  /*border-color: red !important;*/
-
 /*}*/
 
 .mycll {
@@ -172,7 +161,7 @@
 
 .mybtt {
   bottom: 10%!important;
-  display: block!important;
+  display: block ;
   position: fixed!important;
   width:30%!important;
   left:35%!important;
@@ -181,11 +170,11 @@
 
 .panelx{
   position: fixed;
-  left:10VW;
+  left:2vw;
   top:50px;
   height:auto;
   display: block;
-  width:80vw;
+  width:96vw;
 }
 #videoright{
   position: relative;
@@ -203,7 +192,7 @@
   max-height:800px;
   padding:0;
   left:0;
-  top:0;
+  top:50px;
   display: block;
 }
 
@@ -230,7 +219,7 @@
 }
 @media screen and (max-width: 700px) {
   #videoleft .myweed {
-    position: fixed;
+    position: absolute;
     width: 100px;
     height: 100px;
     margin: 0;
@@ -271,7 +260,7 @@
   }
   .mybtt {
     top:600px !important;
-    display: block!important;
+    display: block;
     position: fixed!important;
     width: 50%!important;
     height: 60px;
@@ -279,18 +268,23 @@
     z-index: 1005;
   }
 }
-.container.rooie{
+.rooie{
   z-index: 5;
   display: none;
-
+  position: fixed;
+  width:100%;
+  height:100%;
+  padding:30px;
+  background-color:white;
 }
-.container.ziri{
+.ziri{
   z-index: 4;
   display: block;
+  padding:10px;
 }
 
 .panel-body {
-   padding: 0 !important;
+   padding: 10px 10px !important;
 }
 .nav-link{
   padding:1px 10px !important;
@@ -311,4 +305,36 @@
 }
 #navbarSupportedContent{
   background-color:#f8f9fa !important;
+}
+
+.ziri #videoright .remweed{
+    top:-50px;
+}
+.btn-group{
+  z-index:9999999;
+  left:50%;
+  top:10px;
+  position: absolute;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  -o-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+}
+.ziri .panelx {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  height: auto;
+  display: block;
+  width: 100vw;
+  background-color: white;
+}
+.btn-group button{
+  padding:3px;
+  height: 20px;
+}
+
+.ziri #call{
+  display: none;
 }

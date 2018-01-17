@@ -76,69 +76,71 @@
       </ul>
     </div>
   </nav>
-
-  <div class="container rooie">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="page-header">
-          <h1>
-            <button class="btn btn-default hide" autocomplete="off" id="start">Start</button>
-          </h1>
-        </div>
-        <div class="container" id="details">
-          <div class="row">
-            <div class="col-md-12">
-
-
-            </div>
-          </div>
-        </div>
-        <div class="container hide" id="videocall">
-          <div class="row">
-            <div class="btweed">
-              <div class=" container  hide" id="phone">
-                <div class="input-group margin-bottom-sm mycll">
-                  <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
-                  <input class="form-control " type="text" placeholder="Who should we call?" autocomplete="off" id="peer" onkeypress="return checkEnter(this, event);"></input>
-                </div>
-                <button class="btn btn-success mybtt" autocomplete="off" id="call">Call</button> <!--margin-bottom-sm-->
-              </div>
-            </div>
-            <div/>
-            <div id="videos" class="hide">
-              <div class="panelx">
-                <div class="btn-group btn-group-xs pull-right hide btweed">
-                  <button class="btn btn-danger" autocomplete="off" id="toggleaudio">Disable audio</button>
-                  <button class="btn btn-danger" autocomplete="off" id="togglevideo">Disable video</button>
-                </div>
-                <div class="panel-body" id="videoright"></div>
-                <div class="panel-body" id="videoleft"></div>
-              </div>
-              <div class="input-group margin-bottom-sm hide">
-                <span class="input-group-addon"><i class="fa fa-cloud-download fa-fw"></i></span>
-                <input class="form-control" type="text" id="datarecv" disabled></input>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr>
-      <div class="footer">
-      </div>
-    </div>
-  </div>
-<!-- Content -->
-<div class="container ziri">
+  <div class="ziri">
     <div class="row rowmine">
 
     </div>
-</div>
+
+    <div class="rooie">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="page-header">
+            <h1>
+              <button class="btn btn-default hide" autocomplete="off" id="start">Start</button>
+            </h1>
+          </div>
+          <div class="container" id="details">
+            <div class="row">
+              <div class="col-md-12">
+
+
+              </div>
+            </div>
+          </div>
+          <div class="container hide" id="videocall">
+            <div class="row">
+              <div class="btweed">
+                <div class=" container  hide" id="phone">
+                  <div class="input-group margin-bottom-sm mycll">
+                    <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
+                    <input class="form-control " type="text" placeholder="Who should we call?" autocomplete="off" id="peer" onkeypress="return checkEnter(this, event);"></input>
+                  </div>
+                  <button class="btn btn-success mybtt" autocomplete="off" id="call">Call</button> <!--margin-bottom-sm-->
+                </div>
+              </div>
+              <div/>
+              <div id="videos" class="hide">
+                <div class="panelx">
+                  <div class="btn-group btn-group-xs pull-right hide btweed">
+                    <button class="btn btn-danger" autocomplete="off" id="toggleaudio">Disable audio</button>
+                    <button class="btn btn-danger" autocomplete="off" id="togglevideo">Disable video</button>
+                  </div>
+                  <div class="panel-body" id="videoright"></div>
+                  <div class="panel-body" id="videoleft"></div>
+                </div>
+                <div class="input-group margin-bottom-sm hide">
+                  <span class="input-group-addon"><i class="fa fa-cloud-download fa-fw"></i></span>
+                  <input class="form-control" type="text" id="datarecv" disabled></input>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        <div class="footer">
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+<!-- Content -->
 </body>
 <script>
 
     $('body').on('click','.video',function() {
-        var x = $(this).siblings('p').html();
+        var x = $(this).parents(".contactCard").children("span")[0].innerText;
         videoCall(x);
     });
 
@@ -152,42 +154,46 @@
     });
     function initpage() {
         // mocked data
+
+        var interval = setInterval(function(){
         if(userLists.length > 0) {
             $.each(userLists, function (index, data) {
                 $('.rowmine').append(`<div class="col-sm-6 col-md-4 col-lg-3 text-center ">
                         <div class="contactCard">
-                            <span>${data.name}</span>
-                         <img src="..images/user.svg" class="nodeicon" alt="" >
+                            <span>${data}</span>
+                         <img src="../images/user.svg" class="nodeicon" alt="" >
                         <div class="btngroup">
-                        <p class="userId" style="display: none;">${data.userId}</p><a href="#" class="btn btn-lg btn-primary callbutton video"><img src="../images/facetime-button.svg" class="callbuttonimage" alt="" ></a><a href="#" class="btn btn-lg btn-primary callbutton voice"><img src="../images/telephone-handle.svg" class="callbuttonimage" alt="" > </a> </div>
+                        <p class="userId" style="display: none;">${data}</p><a href="#" class="btn btn-lg btn-primary callbutton video"><img src="../images/facetime-button.svg" class="callbuttonimage" alt="" ></a><a href="#" class="btn btn-lg btn-primary callbutton voice"><img src="../images/telephone-handle.svg" class="callbuttonimage" alt="" > </a> </div>
                         </div>
                     </div>`);
             });
+            window.clearInterval(interval);
         }
-        else{
+          else{
 
-        }
+          }
+        },200);
     }
     function videoCall(username){
 
         $("#peer").val(username);
         $("#call").click();
+        $("#call").slideDown(300);
         $(".rooie").slideDown(300);
-        debugger;
     }
 
     function hangupEvent(){
-      $(".rooie").slideDown(300);
+      $(".rooie").show(300);
     }
 
     $(document).ready(function(){
+        $(".rooie").show(300);
+        if(window.width < 700) {
+            $("#myvideo").css("top",parseInt($("#remotevideo").css("height"))+ parseInt($("#remotevideo").css("top")));
 
-        $(".container.rooie").show(200);
+        }
     });
-    $("body").on("click","#call",function(){
-        $("#remotevideo").css("height");
-        $("#myvideo").css("top",parseInt($("#remotevideo").css("height"))+ parseInt($("#remotevideo").css("top")))
-    });
+
 
 </script>
 </html>

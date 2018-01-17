@@ -122,12 +122,10 @@
 <script>
 
     $(document).ready(function(){
-
         $(".container.rooie").show(200);
-    });
-    $("body").on("click","#call",function(){
-        $("#remotevideo").css("height");
-        $("#myvideo").css("top",parseInt($("#remotevideo").css("height"))+ parseInt($("#remotevideo").css("top")))
+        if(window.width < 700) {
+            $("#myvideo").css("top",parseInt($("#remotevideo").css("height"))+ parseInt($("#remotevideo").css("top")));
+        }
     });
 
     $("body").on("click",".nav-link",function(event){

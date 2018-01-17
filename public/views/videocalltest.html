@@ -130,7 +130,13 @@
 
     $("body").on("click",".nav-link",function(event){
         event.preventDefault();
-        window.location.href= this.href;
+        if($(this)[0].innerText.toLowerCase() === "home"){
+            window.history.pushState("","","/");
+        }
+        else {
+            window.history.pushState("", "", $(this)[0].innerText.toLowerCase());
+        }
+        window.location.reload();
     });
 
 </script>

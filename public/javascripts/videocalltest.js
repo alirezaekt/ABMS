@@ -44,9 +44,9 @@
 //
 var server = null;
 if(window.location.protocol === 'http:')
-    server = "http://" + "192.168.137.88" + ":8088/janus";
+    server = "http://" + "192.168.137.124" + ":8088/janus";
 else
-    server = "https://" + "192.168.137.88" + ":8089/janus";
+    server = "https://" + "192.168.137.124" + ":8089/janus";
 //server = "/janus";
 
 var janus = null;
@@ -56,7 +56,7 @@ var opaqueId = "videocalltest-"+Janus.randomString(12);
 var started = false;
 var bitrateTimer = null;
 var spinner = null;
-
+var userLists = [];
 var audioenabled = false;
 var videoenabled = false;
 
@@ -144,6 +144,7 @@ $(document).ready(function() {
                                     if(result !== null && result !== undefined) {
                                         if(result["list"] !== undefined && result["list"] !== null) {
                                             var list = result["list"];
+                                            userLists = result["list"];
                                             Janus.debug("Got a list of registered peers:");
                                             Janus.debug(list);
                                             for(var mp in list) {
@@ -501,7 +502,7 @@ function registerUsername() {
     //     $('#register').removeAttr('disabled').click(registerUsername);
     //     return;
     // }
-    var register = { "request": "register", "username": "alireza" };
+    var register = { "request": "register", "username": "sabet" };
     videocall.send({"message": register});
 }
 

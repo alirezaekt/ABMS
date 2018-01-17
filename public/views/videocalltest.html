@@ -20,43 +20,18 @@
     <script src="../javascripts/bootstrap-toggle.min.js"></script>
 
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/5.0.1/adapter.min.js" ></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/5.0.1/adapter.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js" ></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.1.0/bootbox.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
     <script type="text/javascript" src="../javascripts/janus.js" ></script>
     <script type="text/javascript" src="../javascripts/videocalltest.js"></script>
-    <link rel="stylesheet" href="../stylesheets/mine.css">
     <link rel="stylesheet" href="../stylesheets/myboot.css">
+    <link rel="stylesheet" href="../stylesheets/mine.css">
 
-
-
-
-
-    <!--<script>-->
-    <!--$(function() {-->
-    <!--$(".navbar-static-top").load("navbar.html", function() {-->
-    <!--$(".navbar-static-top li.dropdown").addClass("active");-->
-    <!--$(".navbar-static-top a[href='videocalltest.html']").parent().addClass("active");-->
-    <!--});-->
-    <!--$(".footer").load("footer.html");-->
-    <!--});-->
-    <!--</script>-->
-    <!--<script>-->
-    <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
-    <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
-    <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
-    <!--})(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
-
-    <!--ga('create', 'UA-47739846-3', 'auto');-->
-    <!--ga('send', 'pageview');-->
-
-    <!--</script>-->
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" type="text/css"/>-->
-    <!--<link rel="stylesheet" href="css/demo.css" type="text/css"/>-->
 
 </head>
 <body>
@@ -77,13 +52,13 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="voip">Contacts</a>
+                <a class="nav-link" href="/contacts">Contacts</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="videocalltest"><b>VideoCall</b></a>
+            <li class="nav-item ">
+                <a class="nav-link active" href="/videocall">VideoCall</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="settings">Settings</a>
+                <a class="nav-link" href="/settings">Settings</a>
             </li>
         </ul>
     </div>
@@ -108,58 +83,18 @@
             <div class="container hide" id="videocall">
                 <div class="row">
                     <div class="btweed">
-                        <!--<div class="col-md-6 container hide" id="login">-->
-                        <!--<div class="input-group margin-bottom-sm">-->
-                        <!--<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>-->
-                        <!--<input class="form-control" type="text" placeholder="Choose a username" autocomplete="off" id="username" onkeypress="return checkEnter(this, event);"></input>-->
-                        <!--</div>-->
-                        <!--<button class="btn btn-success margin-bottom-sm" autocomplete="off" id="register">Register</button> <span class="hide label label-info" id="youok"></span>-->
-                        <!--</div>-->
+
                         <div class=" container  hide" id="phone">
                             <div class="input-group margin-bottom-sm mycll">
                                 <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
-                                <input class="form-control " type="text" placeholder="Who should we call?" autocomplete="off" id="peer" onkeypress="return checkEnter(this, event);"></input>
+                                <input class="form-control " type="text" placeholder="Who should we call?" autocomplete="off" id="peer" onkeypress="return checkEnter(this, event);">
                             </div>
-                            <button class="btn btn-success mybtt" autocomplete="off" id="call">Call</button> <!--margin-bottom-sm-->
+                            <button class="btn btn-success mybtt" autocomplete="off" id="call">Call</button>
                         </div>
                     </div>
                     <div/>
                     <div id="videos" class="hide">
-                        <!--<div class="col-md-6">-->
-                            <!--<div class="panel panel-default">-->
-                            <!--<div class="panel-heading">-->
-                            <!--<h3 class="panel-title">Local Stream-->
 
-                            <!--<div class="btn-group btn-group-xs">-->
-                            <!--<button autocomplete="off" id="bitrateset" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">-->
-                            <!--Bandwidth<span class="caret"></span>-->
-                            <!--</button>-->
-                            <!--<ul id="bitrate" class="dropdown-menu" role="menu">-->
-                            <!--<li><a href="#" id="0">No limit</a></li>-->
-                            <!--<li><a href="#" id="128">Cap to 128kbit</a></li>-->
-                            <!--<li><a href="#" id="256">Cap to 256kbit</a></li>-->
-                            <!--<li><a href="#" id="512">Cap to 512kbit</a></li>-->
-                            <!--<li><a href="#" id="1024">Cap to 1mbit</a></li>-->
-                            <!--<li><a href="#" id="1500">Cap to 1.5mbit</a></li>-->
-                            <!--<li><a href="#" id="2000">Cap to 2mbit</a></li>-->
-                            <!--</ul>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                            <!--</h3>-->
-                            <!--</div>-->
-
-                            <!--</div>-->
-                            <!--<div class="input-group margin-bottom-sm">-->
-                            <!--<span class="input-group-addon"><i class="fa fa-cloud-upload fa-fw"></i></span>-->
-                            <!--<input class="form-control" type="text" placeholder="Write a DataChannel message to your peer" autocomplete="off" id="datasend" onkeypress="return checkEnter(this, event);" disabled></input>-->
-                            <!--</div>-->
-
-                            <!--</div>-->
-                            <!--<div class="col-md-6">-->
-                            <!--<div class="panel panel-default">-->
-                            <!--<div class="panel-heading">-->
-                            <!--<h3 class="panel-title">Remote Stream <span class="label label-info hide" id="callee"></span> <span class="label label-primary hide" id="curres"></span> <span class="label label-info hide" id="curbitrate"></span></h3>-->
-                        <!--</div>-->
                         <div class="panelx">
                             <div class="btn-group btn-group-xs pull-right hide btweed">
                                 <button class="btn btn-danger" autocomplete="off" id="toggleaudio">Disable audio</button>
@@ -168,12 +103,11 @@
                             <div class="panel-body" id="videoright"></div>
                             <div class="panel-body" id="videoleft"></div>
                         </div>
-                        <!--</div>-->
+
                         <div class="input-group margin-bottom-sm hide">
                             <span class="input-group-addon"><i class="fa fa-cloud-download fa-fw"></i></span>
-                            <input class="form-control" type="text" id="datarecv" disabled></input>
+                            <input class="form-control" type="text" id="datarecv" disabled>
                         </div>
-                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -185,4 +119,21 @@
     </div>
 </div>
 </body>
+<script>
+
+    $(document).ready(function(){
+
+        $(".container.rooie").show(200);
+    });
+    $("body").on("click","#call",function(){
+        $("#remotevideo").css("height");
+        $("#myvideo").css("top",parseInt($("#remotevideo").css("height"))+ parseInt($("#remotevideo").css("top")))
+    });
+
+    $("body").on("click",".nav-link",function(event){
+        event.preventDefault();
+        window.location.href= this.href;
+    });
+
+</script>
 </html>

@@ -1,47 +1,135 @@
 <html>
-<title>Contacts</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../stylesheets/bootstrap.css">
-<link rel="stylesheet" href="../stylesheets/mine.css">
-<link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
-<link rel="stylesheet" href="../stylesheets/bootstrap-toggle.min.css">
+<title></title>
 
-<script src="../javascripts/jquery-slim.js"></script>
-<script src="../javascripts/popper.js"></script>
-<script src="../javascripts/bootstrap.js"></script>
-<script src="../javascripts/bootstrap-toggle.min.js"></script>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="../stylesheets/mine.css">
+  <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="../stylesheets/bootstrap-toggle.min.css">
+
+  <script src="../javascripts/jquery-slim.js"></script>
+  <script src="../javascripts/popper.js"></script>
+  <script src="../javascripts/bootstrap.js"></script>
+  <script src="../javascripts/bootstrap-toggle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" type="text/css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.css"/>
+
+  <!--<link rel="stylesheet" href="../stylesheets/bootstrap.css">-->
+  <!--<link rel="stylesheet" href="../stylesheets/bootstrap.min.css">-->
+  <!--<link rel="stylesheet" href="../stylesheets/bootstrap-toggle.min.css">-->
+
+  <script src="../javascripts/jquery-slim.js"></script>
+  <script src="../javascripts/popper.js"></script>
+  <script src="../javascripts/bootstrap.js"></script>
+  <script src="../javascripts/bootstrap-toggle.min.js"></script>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/5.0.1/adapter.js" ></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" ></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.1.0/bootbox.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
+  <script type="text/javascript" src="../javascripts/janus.js" ></script>
+  <script type="text/javascript" src="../javascripts/videocalltest.js"></script>
+
+  <link rel="stylesheet" href="../stylesheets/myboot.css">
+  <link rel="stylesheet" href="../stylesheets/mine.css">
+
+  <title>Contacts</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+</head>
 
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="../images/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    BMS
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="voip"><span><b>Contacts</b></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="videocalltest">VideoCall</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="settings">Settings</a>
-      </li>
-    </ul>  
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="../images/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      BMS
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/contacts">Contacts</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/videocall">VideoCall</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/settings">Settings</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container rooie">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h1>
+            <button class="btn btn-default hide" autocomplete="off" id="start">Start</button>
+          </h1>
+        </div>
+        <div class="container" id="details">
+          <div class="row">
+            <div class="col-md-12">
+
+
+            </div>
+          </div>
+        </div>
+        <div class="container hide" id="videocall">
+          <div class="row">
+            <div class="btweed">
+              <div class=" container  hide" id="phone">
+                <div class="input-group margin-bottom-sm mycll">
+                  <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
+                  <input class="form-control " type="text" placeholder="Who should we call?" autocomplete="off" id="peer" onkeypress="return checkEnter(this, event);"></input>
+                </div>
+                <button class="btn btn-success mybtt" autocomplete="off" id="call">Call</button> <!--margin-bottom-sm-->
+              </div>
+            </div>
+            <div/>
+            <div id="videos" class="hide">
+              <div class="panelx">
+                <div class="btn-group btn-group-xs pull-right hide btweed">
+                  <button class="btn btn-danger" autocomplete="off" id="toggleaudio">Disable audio</button>
+                  <button class="btn btn-danger" autocomplete="off" id="togglevideo">Disable video</button>
+                </div>
+                <div class="panel-body" id="videoright"></div>
+                <div class="panel-body" id="videoleft"></div>
+              </div>
+              <div class="input-group margin-bottom-sm hide">
+                <span class="input-group-addon"><i class="fa fa-cloud-download fa-fw"></i></span>
+                <input class="form-control" type="text" id="datarecv" disabled></input>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <div class="footer">
+      </div>
+    </div>
   </div>
-</nav>
 <!-- Content -->
-<div class="container">
+<div class="container ziri">
     <div class="row rowmine">
 
     </div>
@@ -55,80 +143,51 @@
     });
 
     $('body').on('click','.hang',function() {
-        $(this).parent('.contactCard').remove();
+        hangupEvent();
     });
 
-    initpage();
 
-    function initpage(){
+    $(document).ready(function(){
+        initpage();
+    });
+    function initpage() {
         // mocked data
-        var list = [];
-        var user1 = {
-            name : "ali",
-            age : "192",
-            userId : "192.168.1.1",
-            imgUrl : "../images/user.svg"
-        };
-
-        var user2 = {
-            name : "hasan",
-            age : "24",
-            userId : "192.168.1.2",
-            imgUrl : "../images/user.svg"
+        if(userLists.length > 0) {
+            $.each(userLists, function (index, data) {
+                $('.rowmine').append(`<div class="col-sm-6 col-md-4 col-lg-3 text-center ">
+                        <div class="contactCard">
+                            <span>${data.name}</span>
+                         <img src="..images/user.svg" class="nodeicon" alt="" >
+                        <div class="btngroup">
+                        <p class="userId" style="display: none;">${data.userId}</p><a href="#" class="btn btn-lg btn-primary callbutton video"><img src="../images/facetime-button.svg" class="callbuttonimage" alt="" ></a><a href="#" class="btn btn-lg btn-primary callbutton voice"><img src="../images/telephone-handle.svg" class="callbuttonimage" alt="" > </a> </div>
+                        </div>
+                    </div>`);
+            });
         }
-        var user3 = {
-            name : "mohammad",
-            age : "36",
-            userId : "50000",
-            imgUrl : "../images/user.svg"
-        };
-        list.push(user1);
-        list.push(user2);
-        list.push(user3);
-        $.each(list,function(index,data){
-            $('.rowmine').append(`<div class="col-sm-6 col-md-4 col-lg-3 text-center ">
-                                    <div class="contactCard">
-                                        <span>${data.name}</span>
-                                     <img src="${data.imgUrl}" class="nodeicon" alt="" >
-                                    <div class="btngroup">
-                                    <p class="userId" style="display: none;">${data.userId}</p><a href="#" class="btn btn-lg btn-primary callbutton video"><img src="../images/facetime-button.svg" class="callbuttonimage" alt="" ></a><a href="#" class="btn btn-lg btn-primary callbutton voice"><img src="../images/telephone-handle.svg" class="callbuttonimage" alt="" > </a> </div>
-                                    </div>
-                                </div>`);
-        });
+        else{
 
+        }
+    }
+    function videoCall(username){
+
+        $("#peer").val(username);
+        $("#call").click();
+        $(".rooie").slideDown(300);
+        debugger;
     }
 
-    function videoCall(x){
-
-        $.ajax(
-            {
-            url: "http://"+x+":8088/janus",
-            method: "POST",
-            data: {
-                janus : "create",
-                transaction: "10000",
-            },
-            success:function(resp){
-              if(resp["janus"] === "success") {
-                  console.log(resp["transaction"]);
-                  $('body').append(`
-                    <div class="videoBox">
-                        <button class="hang">Hang Up</button>
-                        <iframe src="http://${x}:8088/janus/${resp["data"]["id"]}"></iframe>
-                    </div>
-                `);
-              }
-            },
-            error:function(err){
-                window.alert("call again");
-            },
-            fail:function(err){
-                window.alert("call again");
-            },
-            timeout:function(res){
-                window.alert("call again");
-            }
-        });
+    function hangupEvent(){
+      $(".rooie").slideDown(300);
     }
+
+    $(document).ready(function(){
+
+        $(".container.rooie").show(200);
+    });
+    $("body").on("click","#call",function(){
+        $("#remotevideo").css("height");
+        $("#myvideo").css("top",parseInt($("#remotevideo").css("height"))+ parseInt($("#remotevideo").css("top")))
+    });
+
 </script>
 </html>

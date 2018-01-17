@@ -25,8 +25,8 @@ app.use(cookieParser());
 app.use("/",express.static(__dirname+'/public'));
 app.use('/', index);
 app.use('/users', users);
-app.use('/voip', voip);
-app.use('/videocalltest', videocalltest);
+app.use('/contacts', voip);
+app.use('/videocall', videocalltest);
 app.use('/settings', settings);
 
 // catch 404 and forward to error handler

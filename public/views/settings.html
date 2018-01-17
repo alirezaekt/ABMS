@@ -4,7 +4,6 @@
 <meta name="author" content="AlirezaEkt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../stylesheets/bootstrap.css">
-<link rel="stylesheet" href="../stylesheets/mine.css">
 <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
 <link rel="stylesheet" href="../stylesheets/bootstrap-toggle.min.css">
 
@@ -12,6 +11,9 @@
 <script src="../javascripts/popper.js"></script>
 <script src="../javascripts/bootstrap.js"></script>
 <script src="../javascripts/bootstrap-toggle.min.js"></script>
+
+<link rel="stylesheet" href="../stylesheets/myboot.css">
+<link rel="stylesheet" href="../stylesheets/mine.css">
 
 <body>
 <!-- Navigation Bar -->
@@ -29,13 +31,13 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="voip">Contacts</a>
+                <a class="nav-link" href="/contacts">Contacts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="videocalltest">VideoCall</a>
+                <a class="nav-link" href="/videocall">VideoCall</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#"><span><b>Settings</b></span></a>
+            <li class="nav-item">
+                <a class="nav-link active" href="/settings"><span><b>Settings</b></span></a>
             </li>
         </ul>
     </div>
@@ -76,6 +78,17 @@
     function changecolor2() {
         document.getElementsByClassName("smartnode").style.backgroundColor = "green";
     }
+
+    $(document).ready(function(){
+
+        $(".container.rooie").show(200);
+    });
+    $("body").on("click","#call",function(){
+        $("#remotevideo").css("height");
+        $("#myvideo").css("top",parseInt($("#remotevideo").css("height"))+ parseInt($("#remotevideo").css("top")))
+    });
+
+
 </script>
 
 </body>

@@ -502,7 +502,7 @@ function registerUsername() {
     //     $('#register').removeAttr('disabled').click(registerUsername);
     //     return;
     // }
-    var register = { "request": "register", "username": "sabet" };
+    var register = { "request": "register", "username": "ali" };
     videocall.send({"message": register});
 }
 

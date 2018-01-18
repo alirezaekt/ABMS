@@ -111,7 +111,7 @@
                     <button class="btn btn-danger" autocomplete="off" id="togglevideo">Disable video</button>
                   </div>
                   <div class="panel-body" id="videoright"></div>
-                  <div class="panel-body" id="videoleft"></div>
+                  <div class="panel-body hide" id="videoleft"></div>
                 </div>
                 <div class="input-group margin-bottom-sm hide">
                   <span class="input-group-addon"><i class="fa fa-cloud-download fa-fw"></i></span>
@@ -138,6 +138,19 @@
         var x = $(this).parents(".contactCard").children("span")[0].innerText;
         videoCall(x);
     });
+
+
+    $('body').on('click','.btn-success',function() {
+        videoCallan();
+    });
+    function videoCallan(){
+        $(".rooie").show(300);
+        $(".rooie").slideDown(300);
+        $("#call").show(300);
+        $("#call").slideDown(300);
+
+    }
+
 
     $('body').on('click','.hang',function() {
         hangupEvent();

@@ -133,7 +133,7 @@ router.get('/getAllData',function (req,res) {
     port.on ('open',function(){
         console.log ('evente open inja seda zade shod');
         port.on('data', function(data) {
-            console.log('data: ', data);
+            //console.log('data: ', data);
         });
     });
 
@@ -254,13 +254,12 @@ router.get('/getAllData',function (req,res) {
             lamp4["value"] = 0 ;
         }
             break;
+    }
     consol.log ('------- These are lamps : ');
     console.log(lamp1);
     console.log(lamp2);
     console.log(lamp3);
     console.log(lamp4);
-    }
-
 
     res.send([lamp1,lamp2,lamp3,lamp4]);
 });

@@ -122,6 +122,10 @@ router.get('/getAllData',function (req,res) {
     console.log('man ghable write am');
 
     writeAndDrain ( buffer, function (){
+        port.flush(function (err){
+            console.log('write kardam age error bood  ',err);
+        })
+    });
 
     });
     console.log('man bade write am');
@@ -322,7 +326,10 @@ router.get ('/lamp1on',function (req,res){
       buffer[0] = 0x0D;
       buffer[1] = 0x00;
       buffer[2] = temporary;
-      writeAndDrain(buffer, function () {
+      writeAndDrain ( buffer, function (){
+          port.flush(function (err){
+              console.log('write kardam age error bood  ',err);
+          })
       });
   }
 });
@@ -346,7 +353,10 @@ router.get ('/lamp1off',function (req,res){
         buffer[0] = 0x0D;
         buffer[1] = 0x00;
         buffer[2] = temporary;
-        writeAndDrain(buffer, function () {
+        writeAndDrain ( buffer, function (){
+            port.flush(function (err){
+                console.log('write kardam age error bood  ',err);
+            })
         });
     }
 });
@@ -372,7 +382,10 @@ router.get ('/lamp2on',function (req,res){
         buffer[0] = 0x0D;
         buffer[1] = 0x00;
         buffer[2] = temporary;
-        writeAndDrain(buffer, function () {
+        writeAndDrain ( buffer, function (){
+            port.flush(function (err){
+                console.log('write kardam age error bood  ',err);
+            })
         });
 
     }
@@ -398,7 +411,10 @@ router.get ('/lamp2off',function (req,res){
         buffer[0] = 0x0D;
         buffer[1] = 0x00;
         buffer[2] = temporary;
-        writeAndDrain(buffer, function () {
+        writeAndDrain ( buffer, function (){
+            port.flush(function (err){
+                console.log('write kardam age error bood  ',err);
+            })
         });
 
 
@@ -427,8 +443,11 @@ router.get ('/lamp3on',function (req,res){
         buffer[0] = 0x0D;
         buffer[1] = 0x00;
         buffer[2] = temporary;
-        writeAndDrain(buffer, function () {
-        });
+        writeAndDrain ( buffer, function (){
+            port.flush(function (err){
+                console.log('write kardam age error bood  ',err);
+            })
+        });;
 
 
     }
@@ -455,7 +474,10 @@ router.get ('/lamp3off',function (req,res){
         buffer[0] = 0x0D;
         buffer[1] = 0x00;
         buffer[2] = temporary;
-        writeAndDrain(buffer, function () {
+        writeAndDrain ( buffer, function (){
+            port.flush(function (err){
+                console.log('write kardam age error bood  ',err);
+            })
         });
 
 
@@ -484,7 +506,10 @@ router.get ('/lamp4on',function (req,res){
         buffer[0] = 0x0D;
         buffer[1] = 0x00;
         buffer[2] = temporary;
-        writeAndDrain(buffer, function () {
+        writeAndDrain ( buffer, function (){
+            port.flush(function (err){
+                console.log('write kardam age error bood  ',err);
+            })
         });
 
     }
@@ -513,7 +538,10 @@ router.get ('/lamp4off',function (req,res){
         buffer[0] = 0x0D;
         buffer[1] = 0x00;
         buffer[2] = temporary;
-        writeAndDrain(buffer, function () {
+        writeAndDrain ( buffer, function (){
+            port.flush(function (err){
+                console.log('write kardam age error bood  ',err);
+            })
         });
 
 

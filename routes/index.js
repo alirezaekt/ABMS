@@ -68,31 +68,6 @@ router.get('/serialp',function (req,res) {
     console.log("serialdone")
     res.send(true);
 });
-router.get('/serialpf',function (req,res) {
-
-    console.log('------------',req.body.number) ;
-    var buffer = new Buffer(3);
-    buffer[0] = 0x0D;
-    buffer[1] = 0x00;
-    buffer[2] = req.body.number;
-    console.log('man ghable write am');
-    // port.write(buffer, function(err) {
-    //    if (err) {
-    //        return console.log('Error on write: ', err.message);
-    //     }
-    //     console.log('message written');
-    //  });
-    writeAndDrain ( buffer, function (){
-        port.flush(function (err){
-            console.log('write kardam age error bood  ',err);
-        })
-    });
-    console.log('man bade write am');
-// Open errors will be emitted as an error event
-
-    console.log("serialdone")
-    res.send(true);
-});
 router.get ('/readdata', function (req,res) {
 
         function writeAndDrain (data, callback) {
@@ -111,24 +86,28 @@ router.get ('/readdata', function (req,res) {
                 console.log('write kardam age error bood  ',err);
             })
         });
+        console.log('man bade write am');
+
+
     console.log("serialdone");
 
 
     port.on ('open',function(){
         console.log ('evente open inja seda zade shod');
         port.on('data', function(data) {
-            console.log('data: ', data);
+            console.log('data1: ', data);
         });
     });
 
     port.on ('data',function(data) {
-        console.log ('data :  ' , data) ;
+        console.log ('data2:  ' , data) ;
     });
 
 
 });
-var output;
+var output ;
 router.get('/getAllData',function (req,res) {
+
 
     function writeAndDrain (data, callback) {
         port.write(data);
@@ -142,9 +121,7 @@ router.get('/getAllData',function (req,res) {
     console.log('man ghable write am');
 
     writeAndDrain ( buffer, function (){
-        port.flush(function (err){
-            console.log('write kardam age error bood  ',err);
-        })
+
     });
     console.log('man bade write am');
 
@@ -160,22 +137,18 @@ router.get('/getAllData',function (req,res) {
     });
 
     port.on ('data',function(data) {
-        console.log ('data :  ' , data) ;
-
-        port.flush(function (err) {
-            console.log('flush error : ', err)
+        console.log ('data3:  ' , data) ;
+        output = data[0] ;
         });
-    });
-output=data;
     switch (output)  {
-        case 0x00 : {
+        case 0 : {
             lamp1["value"] = 1 ;
             lamp2["value"] = 1 ;
             lamp3["value"] = 1 ;
             lamp4["value"] = 1 ;
         }
         break;
-        case 0x01 : {
+        case 1 : {
             lamp1["value"] = 0 ;
             lamp2["value"] = 1 ;
             lamp3["value"] = 1 ;
@@ -281,24 +254,24 @@ output=data;
         }
             break;
     }
-    consol.log ('------- These are lamps : ');
-    console.log(lamp1[value]);
-    console.log(lamp2[value]);
-    console.log(lamp3[value]);
-    console.log(lamp4[value]);
+    console.log ('------- These are lamps : ');
+    console.log(lamp1["value"]);
+    console.log(lamp2["value"]);
+    console.log(lamp3["value"]);
+    console.log(lamp4);
 
     res.send([lamp1,lamp2,lamp3,lamp4]);
 });
-// router.get('/changeData',function (req,res) {
-//     // if(lamp2["value"]===1)
-//     // {
-//     //     lamp2["value"]=0;
-//     // }
-//     // else{
-//     //     lamp2["value"]=1;
-//     // }
-//     // res.send(lamp2);
-// });
+router.get('/changeData',function (req,res) {
+    // if(lamp2["value"]===1)
+    // {
+    //     lamp2["value"]=0;
+    // }
+    // else{
+    //     lamp2["value"]=1;
+    // }
+    // res.send(lamp2);
+});
 
 router.get('/serialp2',function (req,res) {
     port.flush(function(err){});
@@ -326,4 +299,214 @@ router.get('/serialp2',function (req,res) {
     res.send(true);
 });
 
+var temporary ;
+
+router.get ('/lamp1on',function (req,res){
+    var temp1 = output % 2 ;
+    if (temp1 == 1) {
+        temporary = output;
+    }
+    if (temp1 == 0) {
+        temporary =output+1 ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+});
+router.get ('/lamp1off',function (req,res){
+    var temp1 = output % 2 ;
+    if (temp1 == 1) {
+        temporary = output - 1;
+    }
+    if (temp1 == 0) {
+        temporary =output ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+});
+
+router.get ('/lamp2on',function (req,res){
+    var temp1 = output >> 1  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary =output;
+    }
+    if (temp1 == 0) {
+        temporary =output +2 ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+});
+router.get ('/lamp2off',function (req,res){
+    var temp1 = output >> 1  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary =output - 2 ;
+    }
+    if (temp1 == 0) {
+        temporary =output  ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+
+
+
+});
+router.get ('/lamp3on',function (req,res){
+    var temp1 = output >> 2  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary =output;
+    }
+    if (temp1 == 0) {
+        temporary = output + 4;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+
+
+
+});
+router.get ('/lamp3off',function (req,res){
+    var temp1 = output >> 2  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary = output - 4;
+    }
+    if (temp1 == 0) {
+        temporary = output;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+
+
+
+});
+router.get ('/lamp4on',function (req,res){
+    var temp1 = output >> 3  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary = output;
+    }
+    if (temp1 == 0) {
+        temporary = output +8 ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+
+
+
+});
+router.get ('/lamp4off',function (req,res){
+    var temp1 = output >> 3  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary = output - 8;
+    }
+    if (temp1 == 0) {
+        temporary = output ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+
+
+
+});
+
+
+
+
+// router.get('/serialpf',function (req,res) {
+//
+//     console.log('new request recieved') ;
+//     var buffer = new Buffer(3);
+//     buffer[0] = 0x0D;
+//     buffer[1] = 0x00;
+//     buffer[2] = req.body.number;
+//     console.log('man ghable write am');
+//     // port.write(buffer, function(err) {
+//     //    if (err) {
+//     //        return console.log('Error on write: ', err.message);
+//     //     }
+//     //     console.log('message written');
+//     //  });
+//     writeAndDrain ( buffer, function (){
+//         port.flush(function (err){
+//             console.log('write kardam age error bood  ',err);
+//         })
+//     });
+//     console.log('man bade write am');
+// // Open errors will be emitted as an error event
+//
+//     console.log("serialdone")
+//     res.send(true);
+// });
 

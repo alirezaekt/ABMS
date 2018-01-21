@@ -85,7 +85,7 @@
             <div class="smartnode">
             Room2 <span>light2<br></span>
             <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
-            <br><input type="checkbox" checked data-toggle="toggle" id="lam1"><input type="checkbox" checked data-toggle="toggle" id="lam2"><input type="checkbox" checked data-toggle="toggle" id="lam3"><input type="checkbox" checked data-toggle="toggle" id="lam4">
+            <br><input type="checkbox" unchecked data-toggle="toggle" id="lam1"><input type="checkbox" unchecked data-toggle="toggle" id="lam2"><input type="checkbox" unchecked data-toggle="toggle" id="lam3"><input type="checkbox" unchecked data-toggle="toggle" id="lam4">
             </div>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
@@ -154,8 +154,7 @@
             if( this.className.split("off").length ===2){
                 console.log("1on");
                 $.ajax({
-                    url:'/serialp'
-
+                    url:'/serialp',
                 });
             }
             if( this.className.split("off").length ===1){
@@ -315,6 +314,233 @@
                 });
             }
         }
+
+        if($(this).children('#lam1')[0] !== undefined && $(this).children('#lam1') !== "undefined")
+        {
+            if( this.className.split("off").length ===2){
+                $.ajax({
+                    url:'/lamp1on',
+                });
+            }
+            if( this.className.split("off").length ===1){
+                $.ajax({
+                    url:'/lamp1off'
+                });
+            }
+        }
+
+
+        if($(this).children('#lam2')[0] !== undefined && $(this).children('#lam2') !== "undefined")
+        {
+            if( this.className.split("off").length ===2){
+                $.ajax({
+                    url:'/lamp2on',
+                });
+            }
+            if( this.className.split("off").length ===1){
+                $.ajax({
+                    url:'/lamp2off'
+                });
+            }
+        }
+
+        if($(this).children('#lam3')[0] !== undefined && $(this).children('#lam3') !== "undefined")
+        {
+            if( this.className.split("off").length ===2){
+                $.ajax({
+                    url:'/lamp3on',
+                });
+            }
+            if( this.className.split("off").length ===1){
+                $.ajax({
+                    url:'/lamp3off'
+                });
+            }
+        }
+        if($(this).children('#lam4')[0] !== undefined && $(this).children('#lam4') !== "undefined")
+        {
+            if( this.className.split("off").length ===2){
+                $.ajax({
+                    url:'/lamp4on',
+                });
+            }
+            if( this.className.split("off").length ===1){
+                $.ajax({
+                    url:'/lamp4off'
+                });
+            }
+        }
+    // if($(this).children('#lam1')[0] !== undefined && $(this).children('#r2l1') !== "undefined")
+    // {
+    //     if( this.className.split("off").length ===2){
+    //         var a1,a2,a3,a4;
+    //         a1=1; a2=0; a3=0; a4=0;
+    //         element = $('#lam2');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a2=1; }
+    //         element = $('#lam3');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=1; }
+    //         element = $('#lam4');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
+    //         console.log(outk);
+    //         $.ajax({
+    //             url:'/serialpf',
+    //             data: {
+    //                 number : outk
+    //             }
+    //         });
+    //     }
+    //     if( this.className.split("off").length ===1){
+    //         var a1,a2,a3,a4;
+    //         a1=0; a2=0; a3=0; a4=0;
+    //         element = $('#lam2');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a2=1; }
+    //         element = $('#lam3');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=1; }
+    //         element = $('#lam4');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
+    //         var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
+    //         $.ajax({
+    //             url:'/serialpf',
+    //             data: {
+    //                 number : outk
+    //             }
+    //         });
+    //     }
+    // }
+    // if($(this).children('#lam2')[0] !== undefined && $(this).children('#r2l1') !== "undefined")
+    // {
+    //     if( this.className.split("off").length ===2){
+    //         var a1,a2,a3,a4;
+    //         a1=0; a2=1; a3=0; a4=0;
+    //         element = $('#lam1');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a1=1; }
+    //         element = $('#lam3');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=1; }
+    //         element = $('#lam4');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
+    //         var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
+    //         $.ajax({
+    //             url:'/serialpf',
+    //             data: {
+    //                 number : outk
+    //             }
+    //         });
+    //     }
+    //     if( this.className.split("off").length ===1){
+    //         var a1,a2,a3,a4;
+    //         a1=0; a2=0; a3=0; a4=0;
+    //         element = $('#lam1');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a1=1; }
+    //         element = $('#lam3');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=1; }
+    //         element = $('#lam4');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
+    //         var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
+    //         $.ajax({
+    //             url:'/serialpf',
+    //             data: {
+    //                 number : outk
+    //             }
+    //         });
+    //     }
+    // }
+    // if($(this).children('#lam3')[0] !== undefined && $(this).children('#r2l1') !== "undefined")
+    // {
+    //     if( this.className.split("off").length ===2){
+    //         var a1,a2,a3,a4;
+    //         a1=0; a2=0; a3=1; a4=0;
+    //         element = $('#lam1');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a2=1; }
+    //         element = $('#lam2');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=2; }
+    //         element = $('#lam4');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=4; }
+    //         var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
+    //         $.ajax({
+    //             url:'/serialpf',
+    //             data: {
+    //                 number : outk
+    //             }
+    //         });
+    //     }
+    //     if( this.className.split("off").length ===1){
+    //         var a1,a2,a3,a4;
+    //         a1=0; a2=0; a3=0; a4=0;
+    //         element = $('#lam1');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a1=1; }
+    //         element = $('#lam2');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a2=1; }
+    //         element = $('#lam4');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
+    //         var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
+    //         $.ajax({
+    //             url:'/serialpf',
+    //             data: {
+    //                 number : outk
+    //             }
+    //         });
+    //     }
+    // }
+    // if($(this).children('#lam4')[0] !== undefined && $(this).children('#r2l1') !== "undefined")
+    // {
+    //     if( this.className.split("off").length ===2){
+    //         var a1,a2,a3,a4;
+    //         a1=0; a2=0; a3=0; a4=1;
+    //         element = $('#lam1');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a1=1; }
+    //         element = $('#lam2');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a2=1; }
+    //         element = $('#lam3');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=1; }
+    //         var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
+    //         $.ajax({
+    //             url:'/serialpf',
+    //             data: {
+    //                 number : outk
+    //             }
+    //         });
+    //     }
+    //     if( this.className.split("off").length ===1){
+    //         var a1,a2,a3,a4;
+    //         a1=0; a2=0; a3=0; a4=0;
+    //         element = $('#lam1');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a1=1; }
+    //         element = $('#lam2');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a2=1; }
+    //         element = $('#lam3');
+    //         if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=1; }
+    //         var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
+    //         $.ajax({
+    //             url:'/serialpf',
+    //             data: {
+    //                 number : outk
+    //             }
+    //         });
+    //     }
+    //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     });
 function getDatasFrequently() {
     $.ajax({

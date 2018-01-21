@@ -307,8 +307,11 @@ router.get('/serialp2',function (req,res) {
 var temporary ;
 
 router.get ('/lamp1on',function (req,res){
-  if (count > 3) {
+    console.log('ggggggggggggggggg');
+
+    if (count > 3) {
       var temp1 = output % 2;
+      console.log('xxxxxxxxxxxxxxxxx');
       if (temp1 == 1) {
           temporary = output;
       }
@@ -333,7 +336,11 @@ router.get ('/lamp1on',function (req,res){
   }
 });
 router.get ('/lamp1off',function (req,res){
+    console.log('ggggggggggggggggggg');
+
     if (count > 3) {
+        console.log('xxxxxxxxxxxxxxxxx');
+
 
         var temp1 = output % 2;
         if (temp1 == 1) {

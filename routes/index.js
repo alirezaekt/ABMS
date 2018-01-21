@@ -326,7 +326,7 @@ router.get ('/lamp1on',function (req,res){
       var buffer = new Buffer(3);
       buffer[0] = 0x0D;
       buffer[1] = 0x00;
-      buffer[2] = 0x0f;
+      buffer[2] = temporary;
       writeAndDrain ( buffer, function (){
           port.flush(function (err){
               console.log('write kardam age error bood  ',err);
@@ -356,7 +356,7 @@ router.get ('/lamp1off',function (req,res){
         var buffer = new Buffer(3);
         buffer[0] = 0x0D;
         buffer[1] = 0x00;
-        buffer[2] = 0x00;
+        buffer[2] = temporary;
         writeAndDrain ( buffer, function (){
         });
 
@@ -364,7 +364,6 @@ router.get ('/lamp1off',function (req,res){
 });
 
 router.get ('/lamp2on',function (req,res){
-    if (count > 3) {
 
         var temp1 = output >> 1;
         temp1 = temp1 % 2;
@@ -390,10 +389,9 @@ router.get ('/lamp2on',function (req,res){
             })
         });
 
-    }
+
 });
 router.get ('/lamp2off',function (req,res){
-    if (count > 3) {
 
         var temp1 = output >> 1;
         temp1 = temp1 % 2;
@@ -420,12 +418,11 @@ router.get ('/lamp2off',function (req,res){
         });
 
 
-    }
+
 
 
 });
 router.get ('/lamp3on',function (req,res){
-    if (count > 3) {
 
         var temp1 = output >> 2;
         temp1 = temp1 % 2;
@@ -452,11 +449,10 @@ router.get ('/lamp3on',function (req,res){
         });;
 
 
-    }
+
 
 });
 router.get ('/lamp3off',function (req,res){
-    if (count > 3) {
 
         var temp1 = output >> 2;
         temp1 = temp1 % 2;
@@ -483,12 +479,11 @@ router.get ('/lamp3off',function (req,res){
         });
 
 
-    }
+
 
 
 });
 router.get ('/lamp4on',function (req,res){
-    if (count > 3) {
 
         var temp1 = output >> 3;
         temp1 = temp1 % 2;
@@ -514,13 +509,12 @@ router.get ('/lamp4on',function (req,res){
             })
         });
 
-    }
+
 
 
 
 });
 router.get ('/lamp4off',function (req,res){
-    if (count > 3) {
 
         var temp1 = output >> 3;
         temp1 = temp1 % 2;
@@ -547,7 +541,7 @@ router.get ('/lamp4off',function (req,res){
         });
 
 
-    }
+
 
 });
 

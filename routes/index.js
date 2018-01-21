@@ -141,10 +141,7 @@ router.get('/getAllData',function (req,res) {
     port.on ('data',function(data) {
         console.log ('data3:  ' , data) ;
         output = data ;
-        port.flush(function (err) {
-            console.log('flush error : ', err)
         });
-    });
 
     switch (output)  {
         case 0x00 : {

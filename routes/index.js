@@ -327,7 +327,7 @@ router.get ('/lamp1on',function (req,res){
       var buffer = new Buffer(3);
       buffer[0] = 0x0D;
       buffer[1] = 0x00;
-      buffer[2] = temporary;
+      buffer[2] = 0x0f;
       writeAndDrain ( buffer, function (){
           port.flush(function (err){
               console.log('write kardam age error bood  ',err);
@@ -358,11 +358,8 @@ router.get ('/lamp1off',function (req,res){
         var buffer = new Buffer(3);
         buffer[0] = 0x0D;
         buffer[1] = 0x00;
-        buffer[2] = temporary;
+        buffer[2] = 0x00;
         writeAndDrain ( buffer, function (){
-            port.flush(function (err){
-                console.log('write kardam age error bood  ',err);
-            })
         });
     }
 });

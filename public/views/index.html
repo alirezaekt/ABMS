@@ -138,7 +138,7 @@
 <script src="../javascripts/socket.io.js"></script>
 
 <script>
-
+    var flag = 1 ;
     $(document).ready(function(){
         setInterval(function(){
             getDatasFrequently()
@@ -174,38 +174,43 @@
             }
         }
 
-        if($(this).children('#lam1')[0] !== undefined && $(this).children('#lam1') !== "undefined")
-        {
-            if( this.className.split("off").length ===2){
-                $.ajax({
-                    url:'/lamp1on',
-                });
-            }
-            if( this.className.split("off").length ===1){
-                $.ajax({
-                    url:'/lamp1off'
-                });
-            }
+        if($(this).children('#lam1')[0] !== undefined && $(this).children('#lam1') !== "undefined") {
+            if (flag == 1) {
+                if (this.className.split("off").length === 2) {
+                    $.ajax({
+                        url: '/lamp1on',
+                    });
+                }
+                if (this.className.split("off").length === 1) {
+                    $.ajax({
+                        url: '/lamp1off'
+                    });
+                }
+            }flag = 1 ;
         }
-
 
         if($(this).children('#lam2')[0] !== undefined && $(this).children('#lam2') !== "undefined")
         {
-            if( this.className.split("off").length ===2){
-                $.ajax({
-                    url:'/lamp2on',
-                });
-            }
-            if( this.className.split("off").length ===1){
-                $.ajax({
-                    url:'/lamp2off'
-                });
-            }
+            if (flag == 1) {
+
+                if (this.className.split("off").length === 2) {
+                    $.ajax({
+                        url: '/lamp2on',
+                    });
+                }
+                if (this.className.split("off").length === 1) {
+                    $.ajax({
+                        url: '/lamp2off'
+                    });
+                }
+            }flag =1 ;
         }
 
         if($(this).children('#lam3')[0] !== undefined && $(this).children('#lam3') !== "undefined")
         {
-            if( this.className.split("off").length ===2){
+            if (flag == 1) {
+
+                if( this.className.split("off").length ===2){
                 $.ajax({
                     url:'/lamp3on',
                 });
@@ -214,11 +219,13 @@
                 $.ajax({
                     url:'/lamp3off'
                 });
-            }
+            } }flag =1 ;
         }
         if($(this).children('#lam4')[0] !== undefined && $(this).children('#lam4') !== "undefined")
         {
-            if( this.className.split("off").length ===2){
+            if (flag == 1) {
+
+                if( this.className.split("off").length ===2){
                 $.ajax({
                     url:'/lamp4on',
                 });
@@ -227,7 +234,7 @@
                 $.ajax({
                     url:'/lamp4off'
                 });
-            }
+            }}flag =1 ;
         }
     // if($(this).children('#lam1')[0] !== undefined && $(this).children('#r2l1') !== "undefined")
     // {
@@ -416,11 +423,13 @@ function getDatasFrequently() {
                         if (element) {
                             if (element.parents(".toggle")[0].className.split("off").length === 1) {
                                 if (data["value"] === 0)
+                                    flag = 0;
                                     element.parents(".toggle").click();
                             }
                             else if (element.parents(".toggle")[0].className.split("off").length === 2) {
                                 if (data["value"] === 1)
-                                    element.parents(".toggle").click();
+                                    flag = 0;
+                                element.parents(".toggle").click();
                             }
                         }
                     }
@@ -430,11 +439,15 @@ function getDatasFrequently() {
                         if (element) {
                             if (element.parents(".toggle")[0].className.split("off").length === 1) {
                                 if (data["value"] === 0)
-                                    element.parents(".toggle").click();
+                                    flag = 0;
+
+                                element.parents(".toggle").click();
                             }
                             else if (element.parents(".toggle")[0].className.split("off").length === 2) {
                                 if (data["value"] === 1)
-                                    element.parents(".toggle").click();
+                                    flag = 0;
+
+                                element.parents(".toggle").click();
                             }
                         }
                     }
@@ -444,11 +457,15 @@ function getDatasFrequently() {
                         if (element) {
                             if (element.parents(".toggle")[0].className.split("off").length === 1) {
                                 if (data["value"] === 0)
-                                    element.parents(".toggle").click();
+                                    flag = 0;
+
+                                element.parents(".toggle").click();
                             }
                             else if (element.parents(".toggle")[0].className.split("off").length === 2) {
                                 if (data["value"] === 1)
-                                    element.parents(".toggle").click();
+                                    flag = 0;
+
+                                element.parents(".toggle").click();
                             }
                         }
                     }
@@ -458,11 +475,15 @@ function getDatasFrequently() {
                         if (element) {
                             if (element.parents(".toggle")[0].className.split("off").length === 1) {
                                 if (data["value"] === 0)
-                                    element.parents(".toggle").click();
+                                    flag = 0;
+
+                                element.parents(".toggle").click();
                             }
                             else if (element.parents(".toggle")[0].className.split("off").length === 2) {
                                 if (data["value"] === 1)
-                                    element.parents(".toggle").click();
+                                    flag = 0;
+
+                                element.parents(".toggle").click();
                             }
                         }
                     }

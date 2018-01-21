@@ -138,16 +138,17 @@
 <script src="../javascripts/socket.io.js"></script>
 
 <script>
-//    var flag = 1 ;
-//    $(document).ready(function(){
-//        setInterval(function(){
-//            getDatasFrequently()
-//        },600);
-//   });
+    var flag = 1 ;
+    $(document).ready(function(){
+        setInterval(function(){
+            getDatasFrequently()
+        },600);
+   });
     $('#lgg').click(function () {
         console.log("dokm");
     });
     $('body').on("click",".toggle",function () {
+        if (flag == 1) {
             if ($(this).children('#r1l1')[0] !== undefined && $(this).children('#r1l1') !== "undefined") {
                 if (this.className.split("off").length === 2) {
                     console.log("1on");
@@ -240,179 +241,232 @@
 //                }
 //                flag = 1;
 //            }
-        if($(this).children('#lam1')[0] !== undefined && $(this).children('#r2l1') !== "undefined")
-        {
-            if( this.className.split("off").length ===2){
-                var a1,a2,a3,a4;
-                a1=1; a2=0; a3=0; a4=0;
-                element = $('#lam2');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a2=1; }
-                element = $('#lam3');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=1; }
-                element = $('#lam4');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
-                console.log(outk);
-                $.ajax({
-                    url:'/serialpf',
-                    method: "POST",
-                    data: {
-                        number : outk
+            if ($(this).children('#lam1')[0] !== undefined && $(this).children('#r2l1') !== "undefined") {
+                if (this.className.split("off").length === 2) {
+                    var a1, a2, a3, a4;
+                    a1 = 1;
+                    a2 = 0;
+                    a3 = 0;
+                    a4 = 0;
+                    element = $('#lam2');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a2 = 1;
                     }
-                });
-            }
-            if( this.className.split("off").length ===1){
-                var a1,a2,a3,a4;
-                a1=0; a2=0; a3=0; a4=0;
-                element = $('#lam2');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a2=1; }
-                element = $('#lam3');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=1; }
-                element = $('#lam4');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
-                var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
-                $.ajax({
-                    url:'/serialpf',
-                    method: "POST",
-                    data: {
-                        number : outk
+                    element = $('#lam3');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a3 = 1;
                     }
-                });
-            }
-        }
-        if($(this).children('#lam2')[0] !== undefined && $(this).children('#r2l1') !== "undefined")
-        {
-            if( this.className.split("off").length ===2){
-                var a1,a2,a3,a4;
-                a1=0; a2=1; a3=0; a4=0;
-                element = $('#lam1');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a1=1; }
-                element = $('#lam3');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=1; }
-                element = $('#lam4');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
-                var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
-                $.ajax({
-                    url:'/serialpf',
-                    method: "POST",
-                    data: {
-                        number : outk
+                    element = $('#lam4');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a4 = 1;
                     }
-                });
-            }
-            if( this.className.split("off").length ===1){
-                var a1,a2,a3,a4;
-                a1=0; a2=0; a3=0; a4=0;
-                element = $('#lam1');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a1=1; }
-                element = $('#lam3');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=1; }
-                element = $('#lam4');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
-                var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
-                $.ajax({
-                    url:'/serialpf',
-                    method: "POST",
-                    data: {
-                        number : outk
-                    }
-                });
-            }
-        }
-        if($(this).children('#lam3')[0] !== undefined && $(this).children('#r2l1') !== "undefined")
-        {
-            if( this.className.split("off").length ===2){
-                var a1,a2,a3,a4;
-                a1=0; a2=0; a3=1; a4=0;
-                element = $('#lam1');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a2=1; }
-                element = $('#lam2');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a3=2; }
-                element = $('#lam4');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=4; }
-                var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
-                $.ajax({
-                    url:'/serialpf',
-                    method: "POST",
-                    data: {
-                        number : outk
-                    }
-                });
-            }
-            if( this.className.split("off").length ===1){
-                var a1,a2,a3,a4;
-                a1=0; a2=0; a3=0; a4=0;
-                element = $('#lam1');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a1=1; }
-                element = $('#lam2');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a2=1; }
-                element = $('#lam4');
-                if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
-                var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
-                $.ajax({
-                    url:'/serialpf',
-                    method: "POST",
-                    data: {
-                        number : outk
-                    }
-                });
-            }
-        }
-        if($(this).children('#lam4')[0] !== undefined && $(this).children('#r2l1') !== "undefined") {
-            if (this.className.split("off").length === 2) {
-                var a1, a2, a3, a4;
-                a1 = 0;
-                a2 = 0;
-                a3 = 0;
-                a4 = 1;
-                element = $('#lam1');
-                if (element) {
-                    if (element.parents(".toggle")[0].className.split("off").length === 1) a1 = 1;
+                    console.log(outk);
+                    $.ajax({
+                        url: '/serialpf',
+                        method: "POST",
+                        data: {
+                            number: outk
+                        }
+                    });
                 }
-                element = $('#lam2');
-                if (element) {
-                    if (element.parents(".toggle")[0].className.split("off").length === 1) a2 = 1;
-                }
-                element = $('#lam3');
-                if (element) {
-                    if (element.parents(".toggle")[0].className.split("off").length === 1) a3 = 1;
-                }
-                var outk = (8 * a1) + (4 * a2) + (2 * a3) + (a4);
-                $.ajax({
-                    url: '/serialpf',
-                    method: "POST",
-                    data: {
-                        number: outk
+                if (this.className.split("off").length === 1) {
+                    var a1, a2, a3, a4;
+                    a1 = 0;
+                    a2 = 0;
+                    a3 = 0;
+                    a4 = 0;
+                    element = $('#lam2');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a2 = 1;
                     }
-                });
-            }
-            if (this.className.split("off").length === 1) {
-                var a1, a2, a3, a4;
-                a1 = 0;
-                a2 = 0;
-                a3 = 0;
-                a4 = 0;
-                element = $('#lam1');
-                if (element) {
-                    if (element.parents(".toggle")[0].className.split("off").length === 1) a1 = 1;
-                }
-                element = $('#lam2');
-                if (element) {
-                    if (element.parents(".toggle")[0].className.split("off").length === 1) a2 = 1;
-                }
-                element = $('#lam3');
-                if (element) {
-                    if (element.parents(".toggle")[0].className.split("off").length === 1) a3 = 1;
-                }
-                var outk = (8 * a1) + (4 * a2) + (2 * a3) + (a4);
-                $.ajax({
-                    url: '/serialpf',
-                    method: "POST",
-                    data: {
-                        number: outk
+                    element = $('#lam3');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a3 = 1;
                     }
-                });
+                    element = $('#lam4');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a4 = 1;
+                    }
+                    var outk = (8 * a1) + (4 * a2) + (2 * a3) + (a4);
+                    $.ajax({
+                        url: '/serialpf',
+                        method: "POST",
+                        data: {
+                            number: outk
+                        }
+                    });
+                }
             }
-        }
+            if ($(this).children('#lam2')[0] !== undefined && $(this).children('#r2l1') !== "undefined") {
+                if (this.className.split("off").length === 2) {
+                    var a1, a2, a3, a4;
+                    a1 = 0;
+                    a2 = 1;
+                    a3 = 0;
+                    a4 = 0;
+                    element = $('#lam1');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a1 = 1;
+                    }
+                    element = $('#lam3');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a3 = 1;
+                    }
+                    element = $('#lam4');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a4 = 1;
+                    }
+                    var outk = (8 * a1) + (4 * a2) + (2 * a3) + (a4);
+                    $.ajax({
+                        url: '/serialpf',
+                        method: "POST",
+                        data: {
+                            number: outk
+                        }
+                    });
+                }
+                if (this.className.split("off").length === 1) {
+                    var a1, a2, a3, a4;
+                    a1 = 0;
+                    a2 = 0;
+                    a3 = 0;
+                    a4 = 0;
+                    element = $('#lam1');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a1 = 1;
+                    }
+                    element = $('#lam3');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a3 = 1;
+                    }
+                    element = $('#lam4');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a4 = 1;
+                    }
+                    var outk = (8 * a1) + (4 * a2) + (2 * a3) + (a4);
+                    $.ajax({
+                        url: '/serialpf',
+                        method: "POST",
+                        data: {
+                            number: outk
+                        }
+                    });
+                }
+            }
+            if ($(this).children('#lam3')[0] !== undefined && $(this).children('#r2l1') !== "undefined") {
+                if (this.className.split("off").length === 2) {
+                    var a1, a2, a3, a4;
+                    a1 = 0;
+                    a2 = 0;
+                    a3 = 1;
+                    a4 = 0;
+                    element = $('#lam1');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a2 = 1;
+                    }
+                    element = $('#lam2');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a3 = 2;
+                    }
+                    element = $('#lam4');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a4 = 4;
+                    }
+                    var outk = (8 * a1) + (4 * a2) + (2 * a3) + (a4);
+                    $.ajax({
+                        url: '/serialpf',
+                        method: "POST",
+                        data: {
+                            number: outk
+                        }
+                    });
+                }
+                if (this.className.split("off").length === 1) {
+                    var a1, a2, a3, a4;
+                    a1 = 0;
+                    a2 = 0;
+                    a3 = 0;
+                    a4 = 0;
+                    element = $('#lam1');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a1 = 1;
+                    }
+                    element = $('#lam2');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a2 = 1;
+                    }
+                    element = $('#lam4');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a4 = 1;
+                    }
+                    var outk = (8 * a1) + (4 * a2) + (2 * a3) + (a4);
+                    $.ajax({
+                        url: '/serialpf',
+                        method: "POST",
+                        data: {
+                            number: outk
+                        }
+                    });
+                }
+            }
+            if ($(this).children('#lam4')[0] !== undefined && $(this).children('#r2l1') !== "undefined") {
+                if (this.className.split("off").length === 2) {
+                    var a1, a2, a3, a4;
+                    a1 = 0;
+                    a2 = 0;
+                    a3 = 0;
+                    a4 = 1;
+                    element = $('#lam1');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a1 = 1;
+                    }
+                    element = $('#lam2');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a2 = 1;
+                    }
+                    element = $('#lam3');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a3 = 1;
+                    }
+                    var outk = (8 * a1) + (4 * a2) + (2 * a3) + (a4);
+                    $.ajax({
+                        url: '/serialpf',
+                        method: "POST",
+                        data: {
+                            number: outk
+                        }
+                    });
+                }
+                if (this.className.split("off").length === 1) {
+                    var a1, a2, a3, a4;
+                    a1 = 0;
+                    a2 = 0;
+                    a3 = 0;
+                    a4 = 0;
+                    element = $('#lam1');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a1 = 1;
+                    }
+                    element = $('#lam2');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a2 = 1;
+                    }
+                    element = $('#lam3');
+                    if (element) {
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a3 = 1;
+                    }
+                    var outk = (8 * a1) + (4 * a2) + (2 * a3) + (a4);
+                    $.ajax({
+                        url: '/serialpf',
+                        method: "POST",
+                        data: {
+                            number: outk
+                        }
+                    });
+                }
+            }
+        } else flag =1;
+
     });
 function getDatasFrequently() {
     $.ajax({

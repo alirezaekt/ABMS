@@ -95,12 +95,12 @@ router.get ('/readdata', function (req,res) {
     port.on ('open',function(){
         console.log ('evente open inja seda zade shod');
         port.on('data', function(data) {
-            console.log('data: ', data);
+            console.log('data1: ', data);
         });
     });
 
     port.on ('data',function(data) {
-        console.log ('data :  ' , data) ;
+        console.log ('data2:  ' , data) ;
     });
 
 
@@ -139,7 +139,7 @@ router.get('/getAllData',function (req,res) {
     });
 
     port.on ('data',function(data) {
-        console.log ('data :  ' , data) ;
+        console.log ('data3:  ' , data) ;
         output = data ;
         port.flush(function (err) {
             console.log('flush error : ', err)
@@ -261,7 +261,7 @@ router.get('/getAllData',function (req,res) {
             break;
     }
     consol.log ('------- These are lamps : ');
-    console.log(lamp1[]);
+    console.log(lamp1);
     console.log(lamp2);
     console.log(lamp3);
     console.log(lamp4);

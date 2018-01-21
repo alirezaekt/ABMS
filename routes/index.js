@@ -121,9 +121,7 @@ router.get('/getAllData',function (req,res) {
     console.log('man ghable write am');
 
     writeAndDrain ( buffer, function (){
-        port.flush(function (err){
-            console.log('write kardam age error bood  ',err);
-        })
+
     });
     console.log('man bade write am');
 
@@ -140,18 +138,18 @@ router.get('/getAllData',function (req,res) {
 
     port.on ('data',function(data) {
         console.log ('data3:  ' , data) ;
-        output = data ;
+        output = data[0] ;
         });
-
+    console.log()
     switch (output)  {
-        case 0x00 : {
+        case 0 : {
             lamp1["value"] = 1 ;
             lamp2["value"] = 1 ;
             lamp3["value"] = 1 ;
             lamp4["value"] = 1 ;
         }
         break;
-        case 0x01 : {
+        case 1 : {
             lamp1["value"] = 0 ;
             lamp2["value"] = 1 ;
             lamp3["value"] = 1 ;

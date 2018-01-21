@@ -140,7 +140,6 @@ router.get('/getAllData',function (req,res) {
         console.log ('data3:  ' , data) ;
         output = data[0] ;
         });
-    console.log()
     switch (output)  {
         case 0 : {
             lamp1["value"] = 1 ;
@@ -300,4 +299,185 @@ router.get('/serialp2',function (req,res) {
     res.send(true);
 });
 
+var temporary ;
+
+router.get ('/lamp1on',function (req,res){
+    var temp1 = output % 2 ;
+    if (temp1 == 1) {
+        temporary = output;
+    }
+    if (temp1 == 0) {
+        temporary =output+1 ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+});
+router.get ('/lamp1off',function (req,res){
+    var temp1 = output % 2 ;
+    if (temp1 == 1) {
+        temporary = output - 1;
+    }
+    if (temp1 == 0) {
+        temporary =output ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+});
+
+router.get ('/lamp2on',function (req,res){
+    var temp1 = output >> 1  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary =output;
+    }
+    if (temp1 == 0) {
+        temporary =output +1 ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+});
+router.get ('/lamp2off',function (req,res){
+    var temp1 = output >> 1  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary =output - 2 ;
+    }
+    if (temp1 == 0) {
+        temporary =output  ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+
+
+
+});
+router.get ('/lamp3on',function (req,res){
+    var temp1 = output >> 2  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary =output;
+    }
+    if (temp1 == 0) {
+        temporary = output + 4;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+
+
+
+});
+router.get ('/lamp3off',function (req,res){
+    var temp1 = output >> 2  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary = output - 4;
+    }
+    if (temp1 == 0) {
+        temporary = output;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+
+
+
+});
+router.get ('/lamp4on',function (req,res){
+    var temp1 = output >> 3  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary = output;
+    }
+    if (temp1 == 0) {
+        temporary = output +8 ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+
+
+
+});
+router.get ('/lamp4off',function (req,res){
+    var temp1 = output >> 3  ;
+    temp1 = temp1 % 2 ;
+    if (temp1 == 1) {
+        temporary = output - 8;
+    }
+    if (temp1 == 0) {
+        temporary = output ;
+    }
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = temporary;
+    writeAndDrain(buffer,function () {});
+
+
+
+
+
+});
 

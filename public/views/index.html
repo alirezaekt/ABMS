@@ -154,8 +154,7 @@
             if( this.className.split("off").length ===2){
                 console.log("1on");
                 $.ajax({
-                    url:'/serialp'
-
+                    url:'/serialp',
                 });
             }
             if( this.className.split("off").length ===1){
@@ -174,6 +173,86 @@
                 console.log("2offf")
             }
         }
+
+        if($(this).children('#lam1')[0] !== undefined && $(this).children('#lam1') !== "undefined")
+        {
+            if( this.className.split("off").length ===2){
+                $.ajax({
+                    url:'/lamp1on',
+                });
+            }
+            if( this.className.split("off").length ===1){
+                $.ajax({
+                    url:'/lamp1off'
+                });
+            }
+        }
+
+
+        if($(this).children('#lam2')[0] !== undefined && $(this).children('#lam2') !== "undefined")
+        {
+            if( this.className.split("off").length ===2){
+                $.ajax({
+                    url:'/lamp2on',
+                });
+            }
+            if( this.className.split("off").length ===1){
+                $.ajax({
+                    url:'/lamp2off'
+                });
+            }
+        }
+
+        if($(this).children('#lam3')[0] !== undefined && $(this).children('#lam3') !== "undefined")
+        {
+            if( this.className.split("off").length ===2){
+                $.ajax({
+                    url:'/lamp3on',
+                });
+            }
+            if( this.className.split("off").length ===1){
+                $.ajax({
+                    url:'/lamp3off'
+                });
+            }
+        }
+        if($(this).children('#lam4')[0] !== undefined && $(this).children('#lam4') !== "undefined")
+        {
+            if( this.className.split("off").length ===2){
+                $.ajax({
+                    url:'/lamp4on',
+                });
+            }
+            if( this.className.split("off").length ===1){
+                $.ajax({
+                    url:'/lamp4off'
+                });
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     });
 function getDatasFrequently() {
     $.ajax({

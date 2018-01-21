@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="441ae590-a621-4636-8c8a-a4bac26a3037" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/public/views/index.html" afterPath="$PROJECT_DIR$/public/views/index.html" />
       <change beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,8 +19,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="338" column="36" lean-forward="false" selection-start-line="338" selection-start-column="36" selection-end-line="338" selection-end-column="36" />
+            <state relative-caret-position="1056">
+              <caret line="364" column="19" lean-forward="false" selection-start-line="364" selection-start-column="19" selection-end-line="364" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -28,10 +29,10 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="394" column="7" lean-forward="true" selection-start-line="394" selection-start-column="7" selection-end-line="394" selection-end-column="7" />
+            <state relative-caret-position="627">
+              <caret line="144" column="18" lean-forward="true" selection-start-line="141" selection-start-column="2" selection-end-line="144" selection-end-column="18" />
               <folding>
-                <element signature="e#9781#9875#0" expanded="false" />
+                <element signature="e#9793#9887#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -177,8 +178,8 @@
         <option value="$PROJECT_DIR$/public/views/videocalltest.html" />
         <option value="$PROJECT_DIR$/public/javascripts/videocalltest.js" />
         <option value="$PROJECT_DIR$/public/views/voip.html" />
-        <option value="$PROJECT_DIR$/public/views/index.html" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/public/views/index.html" />
       </list>
     </option>
   </component>
@@ -459,21 +460,7 @@
       <workItem from="1516188062697" duration="16156000" />
       <workItem from="1516350492327" duration="5134000" />
       <workItem from="1516395265907" duration="1349000" />
-      <workItem from="1516528004837" duration="17443000" />
-    </task>
-    <task id="LOCAL-00002" summary="some fixes">
-      <created>1511430688780</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1511430688780</updated>
-    </task>
-    <task id="LOCAL-00003" summary="some fixes">
-      <created>1512308090226</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1512308090226</updated>
+      <workItem from="1516528004837" duration="17810000" />
     </task>
     <task id="LOCAL-00004" summary="some fixes">
       <created>1512317085882</created>
@@ -804,11 +791,25 @@
       <option name="project" value="LOCAL" />
       <updated>1516545962182</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="nnn">
+      <created>1516546155252</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1516546155252</updated>
+    </task>
+    <task id="LOCAL-00052" summary="nnn">
+      <created>1516546316662</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1516546316662</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200187000" />
+    <option name="totallyTimeSpent" value="200554000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3226" height="1766" extended-state="6" />
@@ -1267,18 +1268,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="394" column="7" lean-forward="true" selection-start-line="394" selection-start-column="7" selection-end-line="394" selection-end-column="7" />
+        <state relative-caret-position="627">
+          <caret line="144" column="18" lean-forward="true" selection-start-line="141" selection-start-column="2" selection-end-line="144" selection-end-column="18" />
           <folding>
-            <element signature="e#9781#9875#0" expanded="false" />
+            <element signature="e#9793#9887#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="338" column="36" lean-forward="false" selection-start-line="338" selection-start-column="36" selection-end-line="338" selection-end-column="36" />
+        <state relative-caret-position="1056">
+          <caret line="364" column="19" lean-forward="false" selection-start-line="364" selection-start-column="19" selection-end-line="364" selection-end-column="19" />
           <folding />
         </state>
       </provider>

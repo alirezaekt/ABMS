@@ -362,6 +362,7 @@ router.get ('/lamp1off',function (req,res){
         writeAndDrain ( buffer, function (){
         });
     }
+    res.send(true);
 });
 
 router.get ('/lamp2on',function (req,res){

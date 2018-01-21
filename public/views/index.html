@@ -148,7 +148,6 @@
         console.log("dokm");
     });
     $('body').on("click",".toggle",function () {
-        if (flag == 1 ) {
             if ($(this).children('#r1l1')[0] !== undefined && $(this).children('#r1l1') !== "undefined") {
                 if (this.className.split("off").length === 2) {
                     console.log("1on");
@@ -390,7 +389,7 @@
             //         });
             //     }
             //}
-        }flag =1 ;
+        }
     });
 function getDatasFrequently() {
     $.ajax({

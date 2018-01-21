@@ -86,7 +86,7 @@ router.get ('/readdata', function (req,res) {
         });
         console.log('man bade write am');
 
-    });
+
     console.log("serialdone");
 
 

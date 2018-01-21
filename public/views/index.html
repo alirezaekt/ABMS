@@ -181,6 +181,7 @@ function getDatasFrequently() {
         method: "GET",
         success: function (datas) {
             console.log(datas);
+
             $.each(datas, function (index, data) {
                 var element = {};
                 switch (data["number"]) {

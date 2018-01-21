@@ -254,7 +254,11 @@ router.get('/getAllData',function (req,res) {
             lamp4["value"] = 0 ;
         }
             break;
-
+    consol.log ('------- These are lamps : ');
+    console.log(lamp1);
+    console.log(lamp2);
+    console.log(lamp3);
+    console.log(lamp4);
     }
 
 

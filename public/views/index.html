@@ -142,7 +142,7 @@
     $(document).ready(function(){
         setInterval(function(){
             getDatasFrequently()
-        },600);
+        },200);
    });
     $('#lgg').click(function () {
         console.log("dokm");
@@ -363,11 +363,11 @@
                     a4 = 1;
                     element = $('#lam1');
                     if (element) {
-                        if (element.parents(".toggle")[0].className.split("off").length === 1) a2 = 0;
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a1 = 0;
                     }
                     element = $('#lam2');
                     if (element) {
-                        if (element.parents(".toggle")[0].className.split("off").length === 1) a3 = 0;
+                        if (element.parents(".toggle")[0].className.split("off").length === 1) a2 = 0;
                     }
                     element = $('#lam4');
                     if (element) {

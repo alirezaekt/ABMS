@@ -483,6 +483,12 @@ router.get ('/lamp4off',function (req,res){
 
 
 
+router.get('/serialpf',function (req,res) {
+
+    console.log('new adad recieved',req.body.number) ;
+
+});
+
 
 // router.get('/serialpf',function (req,res) {
 //

@@ -67,21 +67,6 @@ router.get('/serialp',function (req,res) {
     res.send(true);
 });
 router.get ('/readdata', function (req,res) {
-    var SerialPort = require('serialport');
-    var port = new SerialPort('/dev/serial0',{
-            baudRate: 115200,
-            databits: 8,
-            parity: 'none',
-            autoOpen :false
-        }
-    )
-    port.open(function (err) {
-        console.log('port open shod');
-        if (err) {
-            return console.log('Error opening port: ', err.message);
-        }
-        console.log('hi');
-
 
         function writeAndDrain (data, callback) {
             port.write(data);

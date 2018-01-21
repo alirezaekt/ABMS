@@ -50,7 +50,7 @@ router.get('/serialp',function (req,res) {
     var buffer = new Buffer(3);
     buffer[0] = 0x0D;
     buffer[1] = 0x00;
-    buffer[2] = 0x00;
+    buffer[2] = 5;
     console.log('man ghable write am');
     // port.write(buffer, function(err) {
     //    if (err) {

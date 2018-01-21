@@ -139,6 +139,9 @@ router.get('/getAllData',function (req,res) {
 
     port.on ('data',function(data) {
         console.log ('data :  ' , data) ;
+        port.flush(function (err) {
+            console.log('flush error : ', err)
+        });
     });
 
     switch (data)  {
@@ -256,7 +259,7 @@ router.get('/getAllData',function (req,res) {
             break;
     }
     consol.log ('------- These are lamps : ');
-    console.log(lamp1);
+    console.log(lamp1[]);
     console.log(lamp2);
     console.log(lamp3);
     console.log(lamp4);

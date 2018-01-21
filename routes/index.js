@@ -346,7 +346,7 @@ router.get ('/lamp2on',function (req,res){
         temporary =output;
     }
     if (temp1 == 0) {
-        temporary =output +1 ;
+        temporary =output +2 ;
     }
     function writeAndDrain (data, callback) {
         port.write(data);

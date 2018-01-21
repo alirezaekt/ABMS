@@ -105,8 +105,9 @@ router.get ('/readdata', function (req,res) {
 
 
 });
-
+var output ;
 router.get('/getAllData',function (req,res) {
+
 
     function writeAndDrain (data, callback) {
         port.write(data);
@@ -139,12 +140,13 @@ router.get('/getAllData',function (req,res) {
 
     port.on ('data',function(data) {
         console.log ('data :  ' , data) ;
+        output = data ;
         port.flush(function (err) {
             console.log('flush error : ', err)
         });
     });
 
-    switch (data)  {
+    switch (output)  {
         case 0x00 : {
             lamp1["value"] = 1 ;
             lamp2["value"] = 1 ;

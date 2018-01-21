@@ -3,54 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="441ae590-a621-4636-8c8a-a4bac26a3037" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/prebuild-install" afterPath="$PROJECT_DIR$/node_modules/.bin/prebuild-install" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/rc" afterPath="$PROJECT_DIR$/node_modules/.bin/rc" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/rc.cmd" afterPath="$PROJECT_DIR$/node_modules/.bin/rc.cmd" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/semver" afterPath="$PROJECT_DIR$/node_modules/.bin/semver" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/serialport-list" afterPath="$PROJECT_DIR$/node_modules/.bin/serialport-list" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/serialport-repl" afterPath="$PROJECT_DIR$/node_modules/.bin/serialport-repl" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/serialport-term" afterPath="$PROJECT_DIR$/node_modules/.bin/serialport-term" />
-      <change beforePath="$PROJECT_DIR$/node_modules/end-of-stream/LICENSE" afterPath="$PROJECT_DIR$/node_modules/end-of-stream/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/node_modules/end-of-stream/README.md" afterPath="$PROJECT_DIR$/node_modules/end-of-stream/README.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/end-of-stream/index.js" afterPath="$PROJECT_DIR$/node_modules/end-of-stream/index.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/end-of-stream/package.json" afterPath="$PROJECT_DIR$/node_modules/end-of-stream/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/.travis.yml" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/CONTRIBUTING.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/LICENSE" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/README.md" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/README.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/bin.js" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/bin.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/download.js" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/download.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/error.js" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/error.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/help.txt" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/help.txt" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/index.js" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/index.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/package.json" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/rc.js" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/rc.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/prebuild-install/util.js" afterPath="$PROJECT_DIR$/node_modules/prebuild-install/util.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/.npmignore" afterPath="$PROJECT_DIR$/node_modules/rc/.npmignore" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/LICENSE.APACHE2" afterPath="$PROJECT_DIR$/node_modules/rc/LICENSE.APACHE2" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/LICENSE.BSD" afterPath="$PROJECT_DIR$/node_modules/rc/LICENSE.BSD" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/LICENSE.MIT" afterPath="$PROJECT_DIR$/node_modules/rc/LICENSE.MIT" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/README.md" afterPath="$PROJECT_DIR$/node_modules/rc/README.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/browser.js" afterPath="$PROJECT_DIR$/node_modules/rc/browser.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/index.js" afterPath="$PROJECT_DIR$/node_modules/rc/index.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/lib/utils.js" afterPath="$PROJECT_DIR$/node_modules/rc/lib/utils.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/package.json" afterPath="$PROJECT_DIR$/node_modules/rc/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/test/ini.js" afterPath="$PROJECT_DIR$/node_modules/rc/test/ini.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/test/nested-env-vars.js" afterPath="$PROJECT_DIR$/node_modules/rc/test/nested-env-vars.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rc/test/test.js" afterPath="$PROJECT_DIR$/node_modules/rc/test/test.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/LICENSE" afterPath="$PROJECT_DIR$/node_modules/semver/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/README.md" afterPath="$PROJECT_DIR$/node_modules/semver/README.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/bin/semver" afterPath="$PROJECT_DIR$/node_modules/semver/bin/semver" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/package.json" afterPath="$PROJECT_DIR$/node_modules/semver/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/range.bnf" afterPath="$PROJECT_DIR$/node_modules/semver/range.bnf" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/semver.js" afterPath="$PROJECT_DIR$/node_modules/semver/semver.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/CHANGELOG.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/History.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/LICENSE" afterPath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/Readme.md" afterPath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/Readme.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/index.js" afterPath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/index.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/package.json" afterPath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/typings/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/serialport/node_modules/commander/typings/index.d.ts" />
       <change beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -66,8 +18,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="143" column="11" lean-forward="false" selection-start-line="143" selection-start-column="11" selection-end-line="143" selection-end-column="11" />
+            <state relative-caret-position="264">
+              <caret line="140" column="11" lean-forward="false" selection-start-line="140" selection-start-column="11" selection-end-line="140" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -540,7 +492,7 @@
       <workItem from="1516188062697" duration="16156000" />
       <workItem from="1516350492327" duration="5134000" />
       <workItem from="1516395265907" duration="1349000" />
-      <workItem from="1516528004837" duration="4808000" />
+      <workItem from="1516528004837" duration="5157000" />
     </task>
     <task id="LOCAL-00001" summary="some fixes">
       <created>1511423710253</created>
@@ -745,11 +697,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516532692790</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added new elements">
+      <created>1516532971937</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1516532971937</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187552000" />
+    <option name="totallyTimeSpent" value="187901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3226" height="1766" extended-state="6" />
@@ -1215,8 +1174,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="143" column="11" lean-forward="false" selection-start-line="143" selection-start-column="11" selection-end-line="143" selection-end-column="11" />
+        <state relative-caret-position="264">
+          <caret line="140" column="11" lean-forward="false" selection-start-line="140" selection-start-column="11" selection-end-line="140" selection-end-column="11" />
           <folding />
         </state>
       </provider>

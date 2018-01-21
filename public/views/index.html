@@ -85,7 +85,7 @@
             <div class="smartnode">
             Room2 <span>light2<br></span>
             <img src="../images/small-light-bulb.png" class="  nodeicon" alt="Responsive image" >
-            <br><input type="checkbox" checked data-toggle="toggle" id="r2l22"><input type="checkbox" checked data-toggle="toggle"><input type="checkbox" unchecked data-toggle="toggle"><input type="checkbox" checked data-toggle="toggle">
+            <br><input type="checkbox" checked data-toggle="toggle" id="lam1"><input type="checkbox" checked data-toggle="toggle" id="lam2"><input type="checkbox" unchecked data-toggle="toggle" id="lam3"><input type="checkbox" checked data-toggle="toggle" id="lam4">
             </div>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3 text-center ">
@@ -184,8 +184,36 @@ function getDatasFrequently() {
             $.each(datas, function (index, data) {
                 var element = {};
                 switch (data["number"]) {
-                    case 5: {
-                        element = $('#r1l1');
+                    case 1: {
+                        element = $('#lam1');
+                        if (element) {
+                            if (element.parents(".toggle")[0].className.split("off").length === 1) {
+                                if (data["value"] === 0)
+                                    element.parents(".toggle").click();
+                            }
+                            else if (element.parents(".toggle")[0].className.split("off").length === 2) {
+                                if (data["value"] === 1)
+                                    element.parents(".toggle").click();
+                            }
+                        }
+                    }
+                        break;
+                    case 2: {
+                        element = $('#lam2');
+                        if (element) {
+                            if (element.parents(".toggle")[0].className.split("off").length === 1) {
+                                if (data["value"] === 0)
+                                    element.parents(".toggle").click();
+                            }
+                            else if (element.parents(".toggle")[0].className.split("off").length === 2) {
+                                if (data["value"] === 1)
+                                    element.parents(".toggle").click();
+                            }
+                        }
+                    }
+                        break;
+                    case 3: {
+                        element = $('#lam3');
                         if (element) {
                             if (element.parents(".toggle")[0].className.split("off").length === 1) {
                                 if (data["value"] === 0)
@@ -199,7 +227,7 @@ function getDatasFrequently() {
                     }
                         break;
                     case 4: {
-                        element = $('#r2l1');
+                        element = $('#lam4');
                         if (element) {
                             if (element.parents(".toggle")[0].className.split("off").length === 1) {
                                 if (data["value"] === 0)

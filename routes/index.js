@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var io = require('socket.io')();
-var lamp1 = {"number":5,"value":1};
-var lamp2 = {"number":4,"value":0};
+var lamp1 = {"number":1,"value":0};
+var lamp2 = {"number":2,"value":0};
+var lamp3 = {"number":3,"value":0};
+var lamp4 = {"number":4,"value":0};
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index.html');
@@ -105,21 +107,168 @@ router.get ('/readdata', function (req,res) {
 });
 
 router.get('/getAllData',function (req,res) {
+
+    function writeAndDrain (data, callback) {
+        port.write(data);
+        port.drain(callback);
+    }
+    console.log('new request recieved') ;
     var buffer = new Buffer(3);
-    buffer[0] = 0x05;
-    buffer[1] = 0x00;
-    buffer[2] = 0x0F;
-    res.send([lamp1,lamp2]);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x80;
+    buffer[2] = 0x03;
+    console.log('man ghable write am');
+
+    writeAndDrain ( buffer, function (){
+        port.flush(function (err){
+            console.log('write kardam age error bood  ',err);
+        })
+    });
+    console.log('man bade write am');
+
+
+    console.log("serialdone");
+
+
+    port.on ('open',function(){
+        console.log ('evente open inja seda zade shod');
+        port.on('data', function(data) {
+            console.log('data: ', data);
+        });
+    });
+
+    port.on ('data',function(data) {
+        console.log ('data :  ' , data) ;
+    });
+
+    switch (data)  {
+        case 0x00 : {
+            lamp1["value"] = 1 ;
+            lamp2["value"] = 1 ;
+            lamp3["value"] = 1 ;
+            lamp4["value"] = 1 ;
+        }
+        break;
+        case 0x01 : {
+            lamp1["value"] = 0 ;
+            lamp2["value"] = 1 ;
+            lamp3["value"] = 1 ;
+            lamp4["value"] = 1 ;
+        }
+        break;
+        case 0x02 : {
+            lamp1["value"] = 1 ;
+            lamp2["value"] = 0 ;
+            lamp3["value"] = 1 ;
+            lamp4["value"] = 1 ;
+        }
+        break;
+        case 0x03 : {
+            lamp1["value"] = 0 ;
+            lamp2["value"] = 0 ;
+            lamp3["value"] = 1 ;
+            lamp4["value"] = 1 ;
+        }
+        break;
+        case 0x04 : {
+            lamp1["value"] = 1 ;
+            lamp2["value"] = 1 ;
+            lamp3["value"] = 0 ;
+            lamp4["value"] = 1 ;
+        }
+        break;
+        case 0x05 : {
+            lamp1["value"] = 0 ;
+            lamp2["value"] = 1 ;
+            lamp3["value"] = 0 ;
+            lamp4["value"] = 1 ;
+        }
+        break;
+        case 0x06 : {
+            lamp1["value"] = 1 ;
+            lamp2["value"] = 0 ;
+            lamp3["value"] = 0 ;
+            lamp4["value"] = 1 ;
+        }
+        break;
+        case 0x07 : {
+            lamp1["value"] = 0 ;
+            lamp2["value"] = 0 ;
+            lamp3["value"] = 0 ;
+            lamp4["value"] = 1 ;
+        }
+        break;
+        case 0x08 : {
+            lamp1["value"] = 1 ;
+            lamp2["value"] = 1 ;
+            lamp3["value"] = 1 ;
+            lamp4["value"] = 0 ;
+        }
+            break;
+        case 0x09 : {
+            lamp1["value"] = 0 ;
+            lamp2["value"] = 1 ;
+            lamp3["value"] = 1 ;
+            lamp4["value"] = 0 ;
+        }
+            break;
+        case 0x0a : {
+            lamp1["value"] = 1 ;
+            lamp2["value"] = 0 ;
+            lamp3["value"] = 1 ;
+            lamp4["value"] = 0 ;
+        }
+            break;
+        case 0x0b : {
+            lamp1["value"] = 0 ;
+            lamp2["value"] = 0 ;
+            lamp3["value"] = 1 ;
+            lamp4["value"] = 0 ;
+        }
+            break;
+        case 0x0c : {
+            lamp1["value"] = 1 ;
+            lamp2["value"] = 1 ;
+            lamp3["value"] = 0 ;
+            lamp4["value"] = 0 ;
+        }
+            break;
+        case 0x0d : {
+            lamp1["value"] = 0 ;
+            lamp2["value"] = 1 ;
+            lamp3["value"] = 0 ;
+            lamp4["value"] = 0 ;
+        }
+            break;
+        case 0x0e : {
+            lamp1["value"] = 1 ;
+            lamp2["value"] = 0 ;
+            lamp3["value"] = 0 ;
+            lamp4["value"] = 0 ;
+        }
+            break;
+        case 0x0f : {
+            lamp1["value"] = 0 ;
+            lamp2["value"] = 0 ;
+            lamp3["value"] = 0 ;
+            lamp4["value"] = 0 ;
+        }
+            break;
+
+    }
+
+
+    res.send([lamp1,lamp2,lamp3,lamp4]);
 });
 router.get('/changeData',function (req,res) {
-    if(lamp2["value"]===1)
-    {
-        lamp2["value"]=0;
-    }
-    else{
-        lamp2["value"]=1;
-    }
-    res.send(lamp2);
+    // if(lamp2["value"]===1)
+    // {
+    //     lamp2["value"]=0;
+    // }
+    // else{
+    //     lamp2["value"]=1;
+    // }
+    // res.send(lamp2);
 });
 
 router.get('/serialp2',function (req,res) {

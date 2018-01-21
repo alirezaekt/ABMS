@@ -484,29 +484,29 @@ router.get ('/lamp4off',function (req,res){
 
 
 
-router.get('/serialpf',function (req,res) {
-
-    console.log('new request recieved') ;
-    var buffer = new Buffer(3);
-    buffer[0] = 0x0D;
-    buffer[1] = 0x00;
-    buffer[2] = req.body.number;
-    console.log('man ghable write am');
-    // port.write(buffer, function(err) {
-    //    if (err) {
-    //        return console.log('Error on write: ', err.message);
-    //     }
-    //     console.log('message written');
-    //  });
-    writeAndDrain ( buffer, function (){
-        port.flush(function (err){
-            console.log('write kardam age error bood  ',err);
-        })
-    });
-    console.log('man bade write am');
-// Open errors will be emitted as an error event
-
-    console.log("serialdone")
-    res.send(true);
-});
+// router.get('/serialpf',function (req,res) {
+//
+//     console.log('new request recieved') ;
+//     var buffer = new Buffer(3);
+//     buffer[0] = 0x0D;
+//     buffer[1] = 0x00;
+//     buffer[2] = req.body.number;
+//     console.log('man ghable write am');
+//     // port.write(buffer, function(err) {
+//     //    if (err) {
+//     //        return console.log('Error on write: ', err.message);
+//     //     }
+//     //     console.log('message written');
+//     //  });
+//     writeAndDrain ( buffer, function (){
+//         port.flush(function (err){
+//             console.log('write kardam age error bood  ',err);
+//         })
+//     });
+//     console.log('man bade write am');
+// // Open errors will be emitted as an error event
+//
+//     console.log("serialdone")
+//     res.send(true);
+// });
 

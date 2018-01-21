@@ -5,6 +5,7 @@ var lamp1 = {"number":1,"value":0};
 var lamp2 = {"number":2,"value":0};
 var lamp3 = {"number":3,"value":0};
 var lamp4 = {"number":4,"value":0};
+var count = 0
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index.html');
@@ -259,6 +260,7 @@ router.get('/getAllData',function (req,res) {
     console.log(lamp2["value"]);
     console.log(lamp3["value"]);
     console.log(lamp4);
+    count = count + 1 ;
 
     res.send([lamp1,lamp2,lamp3,lamp4]);
 });
@@ -302,182 +304,220 @@ router.get('/serialp2',function (req,res) {
 var temporary ;
 
 router.get ('/lamp1on',function (req,res){
-    var temp1 = output % 2 ;
-    if (temp1 == 1) {
-        temporary = output;
-    }
-    if (temp1 == 0) {
-        temporary =output+1 ;
-    }
-    function writeAndDrain (data, callback) {
-        port.write(data);
-        port.drain(callback);
-    }
-    var buffer = new Buffer(3);
-    buffer[0] = 0x0D;
-    buffer[1] = 0x00;
-    buffer[2] = temporary;
-    writeAndDrain(buffer,function () {});
+  if (count > 3) {
+      var temp1 = output % 2;
+      if (temp1 == 1) {
+          temporary = output;
+      }
+      if (temp1 == 0) {
+          temporary = output + 1;
+      }
 
+      function writeAndDrain(data, callback) {
+          port.write(data);
+          port.drain(callback);
+      }
+
+      var buffer = new Buffer(3);
+      buffer[0] = 0x0D;
+      buffer[1] = 0x00;
+      buffer[2] = temporary;
+      writeAndDrain(buffer, function () {
+      });
+  }
 });
 router.get ('/lamp1off',function (req,res){
-    var temp1 = output % 2 ;
-    if (temp1 == 1) {
-        temporary = output - 1;
+    if (count > 3) {
+
+        var temp1 = output % 2;
+        if (temp1 == 1) {
+            temporary = output - 1;
+        }
+        if (temp1 == 0) {
+            temporary = output;
+        }
+
+        function writeAndDrain(data, callback) {
+            port.write(data);
+            port.drain(callback);
+        }
+
+        var buffer = new Buffer(3);
+        buffer[0] = 0x0D;
+        buffer[1] = 0x00;
+        buffer[2] = temporary;
+        writeAndDrain(buffer, function () {
+        });
     }
-    if (temp1 == 0) {
-        temporary =output ;
-    }
-    function writeAndDrain (data, callback) {
-        port.write(data);
-        port.drain(callback);
-    }
-    var buffer = new Buffer(3);
-    buffer[0] = 0x0D;
-    buffer[1] = 0x00;
-    buffer[2] = temporary;
-    writeAndDrain(buffer,function () {});
 });
 
 router.get ('/lamp2on',function (req,res){
-    var temp1 = output >> 1  ;
-    temp1 = temp1 % 2 ;
-    if (temp1 == 1) {
-        temporary =output;
-    }
-    if (temp1 == 0) {
-        temporary =output +2 ;
-    }
-    function writeAndDrain (data, callback) {
-        port.write(data);
-        port.drain(callback);
-    }
-    var buffer = new Buffer(3);
-    buffer[0] = 0x0D;
-    buffer[1] = 0x00;
-    buffer[2] = temporary;
-    writeAndDrain(buffer,function () {});
+    if (count > 3) {
 
+        var temp1 = output >> 1;
+        temp1 = temp1 % 2;
+        if (temp1 == 1) {
+            temporary = output;
+        }
+        if (temp1 == 0) {
+            temporary = output + 2;
+        }
 
+        function writeAndDrain(data, callback) {
+            port.write(data);
+            port.drain(callback);
+        }
+
+        var buffer = new Buffer(3);
+        buffer[0] = 0x0D;
+        buffer[1] = 0x00;
+        buffer[2] = temporary;
+        writeAndDrain(buffer, function () {
+        });
+
+    }
 });
 router.get ('/lamp2off',function (req,res){
-    var temp1 = output >> 1  ;
-    temp1 = temp1 % 2 ;
-    if (temp1 == 1) {
-        temporary =output - 2 ;
-    }
-    if (temp1 == 0) {
-        temporary =output  ;
-    }
-    function writeAndDrain (data, callback) {
-        port.write(data);
-        port.drain(callback);
-    }
-    var buffer = new Buffer(3);
-    buffer[0] = 0x0D;
-    buffer[1] = 0x00;
-    buffer[2] = temporary;
-    writeAndDrain(buffer,function () {});
+    if (count > 3) {
+
+        var temp1 = output >> 1;
+        temp1 = temp1 % 2;
+        if (temp1 == 1) {
+            temporary = output - 2;
+        }
+        if (temp1 == 0) {
+            temporary = output;
+        }
+
+        function writeAndDrain(data, callback) {
+            port.write(data);
+            port.drain(callback);
+        }
+
+        var buffer = new Buffer(3);
+        buffer[0] = 0x0D;
+        buffer[1] = 0x00;
+        buffer[2] = temporary;
+        writeAndDrain(buffer, function () {
+        });
 
 
-
+    }
 
 
 });
 router.get ('/lamp3on',function (req,res){
-    var temp1 = output >> 2  ;
-    temp1 = temp1 % 2 ;
-    if (temp1 == 1) {
-        temporary =output;
+    if (count > 3) {
+
+        var temp1 = output >> 2;
+        temp1 = temp1 % 2;
+        if (temp1 == 1) {
+            temporary = output;
+        }
+        if (temp1 == 0) {
+            temporary = output + 4;
+        }
+
+        function writeAndDrain(data, callback) {
+            port.write(data);
+            port.drain(callback);
+        }
+
+        var buffer = new Buffer(3);
+        buffer[0] = 0x0D;
+        buffer[1] = 0x00;
+        buffer[2] = temporary;
+        writeAndDrain(buffer, function () {
+        });
+
+
     }
-    if (temp1 == 0) {
-        temporary = output + 4;
-    }
-    function writeAndDrain (data, callback) {
-        port.write(data);
-        port.drain(callback);
-    }
-    var buffer = new Buffer(3);
-    buffer[0] = 0x0D;
-    buffer[1] = 0x00;
-    buffer[2] = temporary;
-    writeAndDrain(buffer,function () {});
-
-
-
-
 
 });
 router.get ('/lamp3off',function (req,res){
-    var temp1 = output >> 2  ;
-    temp1 = temp1 % 2 ;
-    if (temp1 == 1) {
-        temporary = output - 4;
-    }
-    if (temp1 == 0) {
-        temporary = output;
-    }
-    function writeAndDrain (data, callback) {
-        port.write(data);
-        port.drain(callback);
-    }
-    var buffer = new Buffer(3);
-    buffer[0] = 0x0D;
-    buffer[1] = 0x00;
-    buffer[2] = temporary;
-    writeAndDrain(buffer,function () {});
+    if (count > 3) {
+
+        var temp1 = output >> 2;
+        temp1 = temp1 % 2;
+        if (temp1 == 1) {
+            temporary = output - 4;
+        }
+        if (temp1 == 0) {
+            temporary = output;
+        }
+
+        function writeAndDrain(data, callback) {
+            port.write(data);
+            port.drain(callback);
+        }
+
+        var buffer = new Buffer(3);
+        buffer[0] = 0x0D;
+        buffer[1] = 0x00;
+        buffer[2] = temporary;
+        writeAndDrain(buffer, function () {
+        });
 
 
-
+    }
 
 
 });
 router.get ('/lamp4on',function (req,res){
-    var temp1 = output >> 3  ;
-    temp1 = temp1 % 2 ;
-    if (temp1 == 1) {
-        temporary = output;
-    }
-    if (temp1 == 0) {
-        temporary = output +8 ;
-    }
-    function writeAndDrain (data, callback) {
-        port.write(data);
-        port.drain(callback);
-    }
-    var buffer = new Buffer(3);
-    buffer[0] = 0x0D;
-    buffer[1] = 0x00;
-    buffer[2] = temporary;
-    writeAndDrain(buffer,function () {});
+    if (count > 3) {
 
+        var temp1 = output >> 3;
+        temp1 = temp1 % 2;
+        if (temp1 == 1) {
+            temporary = output;
+        }
+        if (temp1 == 0) {
+            temporary = output + 8;
+        }
 
+        function writeAndDrain(data, callback) {
+            port.write(data);
+            port.drain(callback);
+        }
+
+        var buffer = new Buffer(3);
+        buffer[0] = 0x0D;
+        buffer[1] = 0x00;
+        buffer[2] = temporary;
+        writeAndDrain(buffer, function () {
+        });
+
+    }
 
 
 
 });
 router.get ('/lamp4off',function (req,res){
-    var temp1 = output >> 3  ;
-    temp1 = temp1 % 2 ;
-    if (temp1 == 1) {
-        temporary = output - 8;
+    if (count > 3) {
+
+        var temp1 = output >> 3;
+        temp1 = temp1 % 2;
+        if (temp1 == 1) {
+            temporary = output - 8;
+        }
+        if (temp1 == 0) {
+            temporary = output;
+        }
+
+        function writeAndDrain(data, callback) {
+            port.write(data);
+            port.drain(callback);
+        }
+
+        var buffer = new Buffer(3);
+        buffer[0] = 0x0D;
+        buffer[1] = 0x00;
+        buffer[2] = temporary;
+        writeAndDrain(buffer, function () {
+        });
+
+
     }
-    if (temp1 == 0) {
-        temporary = output ;
-    }
-    function writeAndDrain (data, callback) {
-        port.write(data);
-        port.drain(callback);
-    }
-    var buffer = new Buffer(3);
-    buffer[0] = 0x0D;
-    buffer[1] = 0x00;
-    buffer[2] = temporary;
-    writeAndDrain(buffer,function () {});
-
-
-
-
 
 });
 

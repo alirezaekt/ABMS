@@ -127,7 +127,6 @@ router.get('/getAllData',function (req,res) {
         })
     });
 
-    });
     console.log('man bade write am');
 
 

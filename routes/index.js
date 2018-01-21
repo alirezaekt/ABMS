@@ -68,6 +68,31 @@ router.get('/serialp',function (req,res) {
     console.log("serialdone")
     res.send(true);
 });
+router.get('/serialpf',function (req,res) {
+
+    console.log('------------',req.body.number) ;
+    var buffer = new Buffer(3);
+    buffer[0] = 0x0D;
+    buffer[1] = 0x00;
+    buffer[2] = req.body.number;
+    console.log('man ghable write am');
+    // port.write(buffer, function(err) {
+    //    if (err) {
+    //        return console.log('Error on write: ', err.message);
+    //     }
+    //     console.log('message written');
+    //  });
+    writeAndDrain ( buffer, function (){
+        port.flush(function (err){
+            console.log('write kardam age error bood  ',err);
+        })
+    });
+    console.log('man bade write am');
+// Open errors will be emitted as an error event
+
+    console.log("serialdone")
+    res.send(true);
+});
 router.get ('/readdata', function (req,res) {
 
         function writeAndDrain (data, callback) {
@@ -86,9 +111,6 @@ router.get ('/readdata', function (req,res) {
                 console.log('write kardam age error bood  ',err);
             })
         });
-        console.log('man bade write am');
-
-
     console.log("serialdone");
 
 
@@ -105,7 +127,7 @@ router.get ('/readdata', function (req,res) {
 
 
 });
-
+var output;
 router.get('/getAllData',function (req,res) {
 
     function writeAndDrain (data, callback) {
@@ -139,12 +161,13 @@ router.get('/getAllData',function (req,res) {
 
     port.on ('data',function(data) {
         console.log ('data :  ' , data) ;
+
         port.flush(function (err) {
             console.log('flush error : ', err)
         });
     });
-
-    switch (data)  {
+output=data;
+    switch (output)  {
         case 0x00 : {
             lamp1["value"] = 1 ;
             lamp2["value"] = 1 ;
@@ -259,23 +282,23 @@ router.get('/getAllData',function (req,res) {
             break;
     }
     consol.log ('------- These are lamps : ');
-    console.log(lamp1[]);
-    console.log(lamp2);
-    console.log(lamp3);
-    console.log(lamp4);
+    console.log(lamp1[value]);
+    console.log(lamp2[value]);
+    console.log(lamp3[value]);
+    console.log(lamp4[value]);
 
     res.send([lamp1,lamp2,lamp3,lamp4]);
 });
-router.get('/changeData',function (req,res) {
-    // if(lamp2["value"]===1)
-    // {
-    //     lamp2["value"]=0;
-    // }
-    // else{
-    //     lamp2["value"]=1;
-    // }
-    // res.send(lamp2);
-});
+// router.get('/changeData',function (req,res) {
+//     // if(lamp2["value"]===1)
+//     // {
+//     //     lamp2["value"]=0;
+//     // }
+//     // else{
+//     //     lamp2["value"]=1;
+//     // }
+//     // res.send(lamp2);
+// });
 
 router.get('/serialp2',function (req,res) {
     port.flush(function(err){});

@@ -139,11 +139,12 @@
 
 <script>
 
-    $(document).ready(function(){
-        setInterval(function(){
-            getDatasFrequently()
-        },600);
-    });
+//    var flag=1;
+//    $(document).ready(function(){
+//        setInterval(function(){
+//            getDatasFrequently()
+//        },600);
+//    });
 
     $('#lgg').click(function () {
         console.log("dokm");
@@ -151,19 +152,21 @@
     $('body').on("click",".toggle",function () {
         if($(this).children('#r1l1')[0] !== undefined && $(this).children('#r1l1') !== "undefined")
         {
-            if( this.className.split("off").length ===2){
-                console.log("1on");
-                $.ajax({
-                    url:'/serialp',
-                });
+            if (flag === 1) {
+                if (this.className.split("off").length === 2) {
+                    console.log("1on");
+                    $.ajax({
+                        url: '/serialp',
+                    });
+                }
+                if (this.className.split("off").length === 1) {
+                    console.log("1of");
+                    $.ajax({
+                        url: '/serialp2'
+                    });
+                }
             }
-            if( this.className.split("off").length ===1){
-                console.log("1of");
-                $.ajax({
-                    url:'/serialp2'
-                });
-            }
-
+            flag =1;
 
         }
         if($(this).children('#lam1')[0] !== undefined && $(this).children('#r2l1') !== "undefined")
@@ -178,6 +181,7 @@
                 element = $('#lam4');
                 if (element) { if (element.parents(".toggle")[0].className.split("off").length === 1) a4=1; }
                 console.log(outk);
+                var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
                 $.ajax({
                     url:'/serialpf',
                     data: {
@@ -385,6 +389,7 @@
              console.log(outk);
              $.ajax({
                  url:'/serialpf',
+                 method: "POST",
                  data: {
                      number : outk
                  }
@@ -402,6 +407,7 @@
              var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
              $.ajax({
                  url:'/serialpf',
+                 method: "POST",
                  data: {
                      number : outk
                  }
@@ -422,6 +428,7 @@
              var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
              $.ajax({
                  url:'/serialpf',
+                 method: "POST",
                  data: {
                      number : outk
                  }
@@ -439,6 +446,7 @@
              var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
              $.ajax({
                  url:'/serialpf',
+                 method: "POST",
                  data: {
                      number : outk
                  }
@@ -459,6 +467,7 @@
              var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
              $.ajax({
                  url:'/serialpf',
+                 method: "POST",
                  data: {
                      number : outk
                  }
@@ -476,6 +485,7 @@
              var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
              $.ajax({
                  url:'/serialpf',
+                 method: "POST",
                  data: {
                      number : outk
                  }
@@ -496,6 +506,7 @@
              var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
              $.ajax({
                  url:'/serialpf',
+                 method: "POST",
                  data: {
                      number : outk
                  }
@@ -513,6 +524,7 @@
              var outk=(8*a1)+(4*a2)+(2*a3)+(a4);
              $.ajax({
                  url:'/serialpf',
+                 method: "POST",
                  data: {
                      number : outk
                  }
@@ -538,12 +550,14 @@ function getDatasFrequently() {
                         element = $('#lam1');
                         if (element) {
                             if (element.parents(".toggle")[0].className.split("off").length === 1) {
-                                if (data["value"] === 0)
-                                    element.parents(".toggle").click();
+                                if (data["value"] === 0){
+                                    flag=0;
+                                    element.parents(".toggle").click();}
                             }
                             else if (element.parents(".toggle")[0].className.split("off").length === 2) {
-                                if (data["value"] === 1)
-                                    element.parents(".toggle").click();
+                                if (data["value"] === 1){
+                                    flag=0;
+                                    element.parents(".toggle").click();}
                             }
                         }
                     }

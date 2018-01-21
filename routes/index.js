@@ -257,10 +257,10 @@ router.get('/getAllData',function (req,res) {
         }
             break;
     }
-    consol.log ('------- These are lamps : ');
-    console.log(lamp1);
-    console.log(lamp2);
-    console.log(lamp3);
+    console.log ('------- These are lamps : ');
+    console.log(lamp1["value"]);
+    console.log(lamp2["value"]);
+    console.log(lamp3["value"]);
     console.log(lamp4);
 
     res.send([lamp1,lamp2,lamp3,lamp4]);

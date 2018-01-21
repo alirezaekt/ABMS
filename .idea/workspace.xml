@@ -18,8 +18,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="143" column="8" lean-forward="false" selection-start-line="143" selection-start-column="8" selection-end-line="143" selection-end-column="8" />
+            <state relative-caret-position="1067">
+              <caret line="262" column="29" lean-forward="false" selection-start-line="262" selection-start-column="29" selection-end-line="262" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -492,7 +492,7 @@
       <workItem from="1516188062697" duration="16156000" />
       <workItem from="1516350492327" duration="5134000" />
       <workItem from="1516395265907" duration="1349000" />
-      <workItem from="1516528004837" duration="5560000" />
+      <workItem from="1516528004837" duration="5727000" />
     </task>
     <task id="LOCAL-00001" summary="some fixes">
       <created>1511423710253</created>
@@ -725,11 +725,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516533532386</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="added new elements">
+      <created>1516533723019</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1516533723019</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188304000" />
+    <option name="totallyTimeSpent" value="188471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3226" height="1766" extended-state="6" />
@@ -1195,8 +1202,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="143" column="8" lean-forward="false" selection-start-line="143" selection-start-column="8" selection-end-line="143" selection-end-column="8" />
+        <state relative-caret-position="1067">
+          <caret line="262" column="29" lean-forward="false" selection-start-line="262" selection-start-column="29" selection-end-line="262" selection-end-column="29" />
           <folding />
         </state>
       </provider>

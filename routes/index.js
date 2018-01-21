@@ -309,7 +309,6 @@ var temporary ;
 router.get ('/lamp1on',function (req,res){
     console.log('ggggggggggggggggg');
 
-    if (count > 3) {
       var temp1 = output % 2;
       console.log('xxxxxxxxxxxxxxxxx');
       if (temp1 == 1) {
@@ -333,12 +332,11 @@ router.get ('/lamp1on',function (req,res){
               console.log('write kardam age error bood  ',err);
           })
       });
-  }
+
 });
 router.get ('/lamp1off',function (req,res){
     console.log('ggggggggggggggggggg');
 
-    if (count > 3) {
         console.log('xxxxxxxxxxxxxxxxx');
 
 
@@ -361,7 +359,7 @@ router.get ('/lamp1off',function (req,res){
         buffer[2] = 0x00;
         writeAndDrain ( buffer, function (){
         });
-    }
+
     res.send(true);
 });
 
